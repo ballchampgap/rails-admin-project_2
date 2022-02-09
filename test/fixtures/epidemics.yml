@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  yname: MyString
+  plant_type: MyString
+  data_epidemic: MyString
+  lat: 
+  lon: MyString
+
+two:
+  yname: MyString
+  plant_type: MyString
+  data_epidemic: MyString
+  lat: 
+  lon: MyString

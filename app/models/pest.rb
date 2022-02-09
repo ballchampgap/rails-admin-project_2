@@ -1,0 +1,2 @@
+class Pest < ApplicationRecord
+end

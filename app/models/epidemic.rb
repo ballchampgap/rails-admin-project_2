@@ -1,0 +1,2 @@
+class Epidemic < ApplicationRecord
+end

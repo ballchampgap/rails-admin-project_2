@@ -37,7 +37,21 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
+  
+  ActionMailer::Base.smtp_settings = {
+    :address => 'smtp.sendgrid.net',
+    :port => '587',
+    :authentication => :plain,
+    :user_name => Rails.application.credentials.dig(:user_name),
+    :password => Rails.application.credentials.dig(:password),
+    :domain => 'heroku.com',
+    :enable_starttls_auto => true
+  }
+  config.action_mailer.delivery_method = :smtp
+config.action_mailer.default_url_options ={:host => 'admin-project-rails.herokuapp.com', :protocol => 'https'}
 
+
+  
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -70,7 +84,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 end

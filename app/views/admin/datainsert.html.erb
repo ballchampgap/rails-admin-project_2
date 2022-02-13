@@ -90,7 +90,7 @@
                               <th scope="col">#</th>
                                     <th scope="col">ชื่อ</th>
                                     <th scope="col" class="text-nowrap" >ชนิดของพืช</th>
-                                    <th scope="col">ศัตรูพืช</th> 
+                                    <th scope="col">โรคระบาด</th> 
                                     <th scope="col">พิกัด</th>
                                     <th scope="col">รายละเอียด</th>     
                                     <th scope="col">วัน-เวลา</th>   
@@ -108,8 +108,6 @@
                             <td class="text-nowrap"><%= epidemic.lat %>,<%= epidemic.lon %></td>
                              <td><% if epidemic.description != nil %>
                              <%= epidemic.description %>
-                             <% else %>
-                             -
                               <% end %>
                              </td>
                             <td class="text-nowrap"><%= epidemic.created_at.strftime('%d/%m/%Y %H:%M') %></td>

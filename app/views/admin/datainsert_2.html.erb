@@ -71,7 +71,7 @@
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card text-white mb-4">
-                                     <a class="btn btn-danger" href="/datainsert2" >
+                                     <a class="btn btn-success" href="/datainsert2" >
                                                 ศัตรูพืช
                                                 </a>
                             </div>
@@ -83,40 +83,61 @@
                                 ตารางข้อมูลศัตรูพืช
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                
-                                    </tbody>
-                                </table>
+                            <div class="table-responsive">
+                            <table class="table table-sm table-hover">
+                            <thead>
+                                <tr>
+                              <th scope="col">#</th>
+                                    <th scope="col">ชื่อ</th>
+                                    <th scope="col" class="text-nowrap" >ชนิดของพืช</th>
+                                    <th scope="col">ศัตรูพืช</th>
+                                    <th scope="col">เวลา</th>       
+                                    <th></th>      
+                                    <th></th> 
+                                </tr>
+                            </thead>
+                            <tbody>
+                        <% @pests.each_with_index do |pest, index| %>  
+                            <tr>
+                            <td class="text-nowrap"><%= index+1 %></td>
+                            <td class="text-nowrap"><%= pest.yname %></td>
+                            <td class="text-nowrap"><%= pest.plant_type %></td>
+                            <td class="text-nowrap"><%= pest.data_pest %></td>
+                            <td class="text-nowrap"><%= pest.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+                            <td class="text-nowrap">
+                                    <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal<%= index+2 %>" ><strong>รายละเอียด</strong></a>
+                                    <div class="modal fade" id="exampleModal<%= index+2 %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered " >
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel2">ผู้แจ้ง👨‍💼<%= pest.yname %></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                <form>
+                                <div class="form-group has-icon">
+                            <% if pest.description != nil %>
+                            <label for="foo"><strong>📣 รายละเอียด</strong></label><br>
+                            <p name="description"><%= pest.description %></p>
+                            <% end %>
                             </div>
+                            <label for="foo"><strong>📌 พิกัด</strong></label><br>
+                            <p name="description"><%= pest.lat %>,<%= pest.lon %></p>
+                                <div class="form-group has-icon">
+  
+                            
+
+                            </div>
+                            </form>
+                   
+                    </td>
+                    <td class="text-nowrap">
+                     <%= link_to "ลบข้อมูล", removedata_path(id: pest.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger ", :style => "color:white" %>
+                    </td>
+                     <% end %> 
+                                </tr>
+                                </tbody>
+                                </table>
                         </div>
                     </div>
                 </main>

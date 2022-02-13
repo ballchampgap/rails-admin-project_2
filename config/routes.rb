@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 get 'read' => 'admin#read'
 get 'datainsert' => 'admin#datainsert'
 get 'datainsert2' => 'admin#datainsert_2'
+delete 'removedata' => 'admin#remove_data'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

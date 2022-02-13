@@ -90,8 +90,10 @@
                               <th scope="col">#</th>
                                     <th scope="col">ชื่อ</th>
                                     <th scope="col" class="text-nowrap" >ชนิดของพืช</th>
-                                    <th scope="col">ศัตรูพืช</th>
-                                    <th scope="col">เวลา</th>       
+                                    <th scope="col">ศัตรูพืช</th> 
+                                    <th scope="col">พิกัด</th>
+                                    <th scope="col">รายละเอียด</th>     
+                                    <th scope="col">วัน-เวลา</th>   
                                     <th></th>      
                                     <th></th> 
                                 </tr>
@@ -103,40 +105,14 @@
                             <td class="text-nowrap"><%= pest.yname %></td>
                             <td class="text-nowrap"><%= pest.plant_type %></td>
                             <td class="text-nowrap"><%= pest.data_pest %></td>
+                            <td class="text-nowrap"><%= pest.lat %>,<%= pest.lon %></td>
+                             <td><% if pest.description != nil %>
+                             <%= pest.description %>
+                             <% else %>
+                             -
+                              <% end %>
+                             </td>
                             <td class="text-nowrap"><%= pest.created_at.strftime('%d/%m/%Y %H:%M') %></td>
-                            <td class="text-nowrap">
-                                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= index+1 %>">
-                                                    รายละเอียด
-                                    </button>
-                                    <div class="modal fade" id="staticBackdrop<%= index+1 %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="staticBackdropLabel">ผู้แจ้ง👨‍💼<%= pest.yname %></h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                             <div class="modal-body">
-                                <form>
-                                <div class="form-group has-icon">
-                            <% if pest.description != nil %>
-                            <label for="foo"><strong>📣 รายละเอียด</strong></label><br>
-                            <p name="description"><%= pest.description %></p>
-                            <% end %>
-                            </div>
-                            <label for="foo"><strong>📌 พิกัด</strong></label><br>
-                            <p name="description"><%= pest.lat %>,<%= pest.lon %></p>
-                                <div class="form-group has-icon">
-
-
-                            </div>
-                            </form>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                   
-                    </td>
                     <td class="text-nowrap">
                      <%= link_to "ลบข้อมูล", removedata_path(id: pest.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger ", :style => "color:white" %>
                     </td>

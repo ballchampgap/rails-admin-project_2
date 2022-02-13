@@ -8,7 +8,7 @@ class AdminController < ApplicationController
   end
 
   def datainsert
-
+    @epidemics = Epidemic.all
   end
 
   def datainsert_2
@@ -19,5 +19,11 @@ class AdminController < ApplicationController
     data = Pest.find(params[:id])
     data.destroy
     redirect_to datainsert2_path
+  end
+
+  def remove_data2
+    data2 = Epidemic.find(params[:id])
+    data2.destroy
+    redirect_to datainsert_path
   end
 end

@@ -83,21 +83,43 @@
                                 ตารางข้อมูลโรคระบาด
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
                                 <div class="table-responsive">
-                                <table class="table table-sm table-hover">
-                                <thead>
-                                    <tr>
-                                    <th scope="col">#</th>
+                            <table class="table table-sm table-hover">
+                            <thead>
+                                <tr>
+                              <th scope="col">#</th>
                                     <th scope="col">ชื่อ</th>
-                                    <th scope="col">ชนิดของพืช</th>
-                                    <th scope="col">โรคของพืช</th>
-                                    <th scope="col">เวลา</th>       
-                                    </tr>
-                                </thead>
-                                <tbody>
+                                    <th scope="col" class="text-nowrap" >ชนิดของพืช</th>
+                                    <th scope="col">ศัตรูพืช</th> 
+                                    <th scope="col">พิกัด</th>
+                                    <th scope="col">รายละเอียด</th>     
+                                    <th scope="col">วัน-เวลา</th>   
+                                    <th></th>      
+                                    <th></th> 
+                                </tr>
+                            </thead>
+                            <tbody>
+                        <% @epidemics.each_with_index do |epidemic, index| %>  
+                            <tr>
+                            <td class="text-nowrap"><%= index+1 %></td>
+                            <td class="text-nowrap"><%= epidemic.yname %></td>
+                            <td class="text-nowrap"><%= epidemic.plant_type %></td>
+                            <td class="text-nowrap"><%= epidemic.data_epidemic %></td>
+                            <td class="text-nowrap"><%= epidemic.lat %>,<%= epidemic.lon %></td>
+                             <td><% if epidemic.description != nil %>
+                             <%= epidemic.description %>
+                             <% else %>
+                             -
+                              <% end %>
+                             </td>
+                            <td class="text-nowrap"><%= epidemic.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+                    <td class="text-nowrap">
+                     <%= link_to "ลบข้อมูล", removedata2_path(id: epidemic.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger ", :style => "color:white" %>
+                    </td>
+                     <% end %> 
+                                </tr>
+                                </tbody>
                                 </table>
-                            </div>
                         </div>
                     </div>
                 </main>

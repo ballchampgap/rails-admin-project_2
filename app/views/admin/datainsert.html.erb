@@ -106,13 +106,13 @@
                             <td class="text-nowrap"><%= epidemic.plant_type %></td>
                             <td class="text-nowrap"><%= epidemic.data_epidemic %></td>
                             <td class="text-nowrap"><%= epidemic.lat %>,<%= epidemic.lon %></td>
+                            <td class="text-nowrap"><%= epidemic.created_at %></td>
                              <td><% if epidemic.description != nil %>
                              <%= epidemic.description %>
                              <% else %>
                              -
                               <% end %>
                              </td>
-                            <td class="text-nowrap"><%= epidemic.created_at %></td>
                     <td class="text-nowrap">
                      <%= link_to "ลบข้อมูล", removedata2_path(id: epidemic.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger ", :style => "color:white" %>
                     </td>

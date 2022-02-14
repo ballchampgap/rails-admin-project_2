@@ -23,3 +23,4 @@ Things you may want to cover:
 
 * ...
 # rails-admin-project_2
+# admin-manager-page

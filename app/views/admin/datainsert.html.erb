@@ -105,19 +105,30 @@
                             <td class="text-nowrap"><%= epidemic.data_epidemic %></td>
                             <td class="text-nowrap"><%= epidemic.created_at %></td>
                              <td class="text-nowrap" >
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= epidemic.id %>">
-                                Launch static backdrop modal
-                                </button>
+                            <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample<%= epidemic.id %>" role="button" aria-controls="offcanvasExample">
+                                    Link with href
+                                    </a>
                          <!-- Modal -->
-                  <div class="modal" id="staticBackdrop<%= epidemic.id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample<%= epidemic.id %>" aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            ...
+                        <div class="offcanvas-body">
+                            <div>
+                            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                            </div>
+                            <div class="dropdown mt-3">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                                Dropdown button
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                            </div>
+                        </div>
                         </div>
                     </td> 
                     <td class="text-nowrap">

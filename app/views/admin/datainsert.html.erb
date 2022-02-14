@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard</title>
@@ -91,9 +91,8 @@
                                     <th scope="col">ชื่อ</th>
                                     <th scope="col" class="text-nowrap" >ชนิดของพืช</th>
                                     <th scope="col">โรคระบาด</th> 
-                                    <th scope="col">พิกัด</th>
-                                    <th scope="col">วัน-เวลา</th>   
-                                    <th scope="col">รายละเอียด</th>     
+                                    <th scope="col">วัน-เวลา</th>       
+                                    <th></th>
                                     <th></th>      
                                 </tr>
                             </thead>
@@ -104,14 +103,25 @@
                             <td class="text-nowrap"><%= epidemic.yname %></td>
                             <td class="text-nowrap"><%= epidemic.plant_type %></td>
                             <td class="text-nowrap"><%= epidemic.data_epidemic %></td>
-                            <td class="text-nowrap"><%= epidemic.lat %>,<%= epidemic.lon %></td>
                             <td class="text-nowrap"><%= epidemic.created_at %></td>
-                             <td><% if epidemic.description != nil %>
-                             <%= epidemic.description %>
-                             <% else %>
-                             -
-                              <% end %>
-                             </td>
+                             <td>
+                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= epidemic.id %>">
+                                    Launch static backdrop modal
+                                    </button></td>  
+                             <div class="modal fade" id="staticBackdrop<%= epidemic.id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+
                     <td class="text-nowrap">
                      <%= link_to "ลบข้อมูล", removedata2_path(id: epidemic.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger ", :style => "color:white" %>
                     </td>

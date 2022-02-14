@@ -288,7 +288,7 @@ height:100%;
       <div class="form-group has-icon">
         <% if @epidemics.description != nil %>
     <label for="foo"><strong>📣 รายละเอียด</strong></label><br>
-    <p name="description"><%= @epidemics.description %></p><% end %></div>
+    <input type="text" name="text1" value="<%= @epidemics.description %>" class="noscroll"/><% end %></div>
     <div class="form-group has-icon">
                 <label for="foo"><strong>📌 พิกัด</strong></label><br>
     <p name="description">ละติจูด:<%= @epidemics.lat %></p>

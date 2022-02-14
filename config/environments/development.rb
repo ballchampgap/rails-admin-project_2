@@ -38,6 +38,23 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   
+  config.action_mailer.default_url_options = { :host => 'gmail.com' }
+
+config.active_support.deprecation = :notify
+
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.default :charset => "utf-8"
+
+# SMTP settings 
+ActionMailer::Base.smtp_settings = {
+    :port           => 587,
+    :address        => 'smtp.gmail.com',
+    :domain         => 'gmail.com',
+    :user_name      => 'projectcsmju24@gmail.com',
+    :password       => 'project123456789',
+    :authentication => :plain,
+}
+
 #   ActionMailer::Base.smtp_settings = {
 #     :address => 'smtp.sendgrid.net',
 #     :port => '587',
@@ -53,8 +70,8 @@ Rails.application.configure do
  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 #mailcatcher
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
+# config.action_mailer.delivery_method = :smtp
+# config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
   
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

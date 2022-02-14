@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_13_122627) do
+ActiveRecord::Schema.define(version: 2022_02_14_185311) do
 
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,8 +28,6 @@ ActiveRecord::Schema.define(version: 2022_02_13_122627) do
     t.string "yname"
     t.string "plant_type"
     t.string "data_epidemic"
-    t.string "lat"
-    t.string "lon"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
@@ -39,8 +37,6 @@ ActiveRecord::Schema.define(version: 2022_02_13_122627) do
     t.string "yname"
     t.string "plant_type"
     t.string "data_pest"
-    t.string "lat"
-    t.string "lon"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"

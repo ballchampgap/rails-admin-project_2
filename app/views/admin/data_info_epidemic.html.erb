@@ -296,10 +296,7 @@ height:100%;
     <p>
 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{@epidemics.lat},#{@epidemics.lon}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
 </p>
-<img src = "https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap
-&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
-&markers=color:red%7Clabel:C%7C40.718217,-73.998284
-&key=AIzaSyBk2-SxqIx59W28JYGXv4vxkq4NkFDrJmI">
+<img src = "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=<%= @epidemics.lat %>,<%= @epidemics.lon %>&key=#{Rails.application.credentials.google_maps_api_key}">
     </div>
     </form>
 

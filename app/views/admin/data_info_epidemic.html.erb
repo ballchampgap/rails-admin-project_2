@@ -292,7 +292,8 @@ height:100%;
     <div class="form-group has-icon">
                 <label for="foo"><strong>📌 พิกัด</strong></label><br>
     <p name="description">ละติจูด:<%= @epidemics.lat %></p>
-    <p name="description">ลองติจูด:<%= @epidemics.lon %></p>
+    <p name="description">ลองติจูด:<%= @epidemics.lon %></p><br>
+    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&makers=#{@epidemics.lat}%2C#{@epidemics.lon}&key=AIzaSyBk2-SxqIx59W28JYGXv4vxkq4NkFDrJmI" %>
 
     </div>
     </form>

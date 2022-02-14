@@ -2,9 +2,6 @@
 <html lang="en">
   <head>
   <style>
-@media (max-width: 600px) {
-    body{ font-size: 14px; }
-  }
 body {
     font-family: "Poppins", sans-serif;
     height: 100vh;
@@ -264,6 +261,13 @@ body {
    
    </style>
 
+<style type="text/css">
+html, body{
+padding:0px;
+margin:0px;
+height:100%;
+}
+</style>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -279,8 +283,8 @@ body {
       <h5>ผู้แจ้ง👨‍💼<%= @epidemics.yname %></h5><br>
     </div>
 
-    <!-- Login Form -->
-    <form>
+    <!--Form -->
+    <form>      
       <div class="form-group has-icon">
         <% if @epidemics.description != nil %>
     <label for="foo"><strong>📣 รายละเอียด</strong></label><br>

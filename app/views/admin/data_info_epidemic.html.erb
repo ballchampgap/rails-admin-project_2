@@ -296,7 +296,9 @@ height:100%;
     <p>
 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{@epidemics.lat},#{@epidemics.lon}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
 </p>
-<img src = "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=<%= @epidemics.lat %>,<%= @epidemics.lon %>&key=#{Rails.application.credentials.google_maps_api_key}">
+<img src = "https://maps.googleapis.com/maps/api/staticmap?center=<%= @epidemics.lat %>,<%= @epidemics.lon %>&zoom=13&size=600x300&maptype=roadmap
+&markers=color:red%7Clabel:C%7C<%= @epidemics.lat %>,<%= @epidemics.lon %>
+&key=AIzaSyBk2-SxqIx59W28JYGXv4vxkq4NkFDrJmI">
     </div>
     </form>
 

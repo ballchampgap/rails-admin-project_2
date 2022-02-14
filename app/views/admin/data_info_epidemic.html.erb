@@ -293,7 +293,9 @@ height:100%;
                 <label for="foo"><strong>📌 พิกัด</strong></label><br>
     <p name="description">ละติจูด:<%= @epidemics.lat %></p>
     <p name="description">ลองติจูด:<%= @epidemics.lon %></p><br>
-    <img src = "https://maps.googleapis.com/maps/api/staticmap?center=<%= @epidemics.lat %>,<%= @epidemics.lon %>&markers=color:red%7Clabel%7C<%= @epidemics.lat %>,<%= @epidemics.lon %>&zoom=12&size=600*400&key=AIzaSyBk2-SxqIx59W28JYGXv4vxkq4NkFDrJmI" />
+    <p>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{@place.lat},#{@place.lon}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
+</p>
 
     </div>
     </form>

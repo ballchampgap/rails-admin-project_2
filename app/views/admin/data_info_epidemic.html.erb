@@ -293,7 +293,7 @@ height:100%;
                 <label for="foo"><strong>📌 พิกัด</strong></label><br>
     <p name="description">ละติจูด:<%= @epidemics.lat %></p>
     <p name="description">ลองติจูด:<%= @epidemics.lon %></p><br>
-    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&makers=#{@epidemics.lat}%2C#{@epidemics.lon}&key=AIzaSyBk2-SxqIx59W28JYGXv4vxkq4NkFDrJmI" %>
+    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=zoom=13&size=600x300&maptype=roadmap&markers=color:red%7Clabel:C%7C@epidemics.lat,@epidemics.lon&key=AIzaSyBk2-SxqIx59W28JYGXv4vxkq4NkFDrJmI" %>
 
     </div>
     </form>

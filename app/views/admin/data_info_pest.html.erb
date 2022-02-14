@@ -288,12 +288,12 @@ height:100%;
       <div class="form-group has-icon">
         <% if @pests.description != nil %>
     <label for="foo"><strong>📣 รายละเอียด</strong></label><br>
-    <input type="text" name="text1" value="<%= @pests.description %>" disabled="disabled" />
+    <input type="text" name="text1" value="<%= @pests.description %>" readonly/>
     <% end %></div>
     <div class="form-group has-icon">
                 <label for="foo"><strong>📌 พิกัด</strong></label><br>
     <p name="description">ละติจูด:<%= @pests.lat %></p>
-    <p name="description">ลองติจูด:<%= @pests.lon %></p>o
+    <p name="description">ลองติจูด:<%= @pests.lon %></p>
 
     </div>
     </form>

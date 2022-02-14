@@ -91,10 +91,9 @@
                                     <th scope="col">ชื่อ</th>
                                     <th scope="col" class="text-nowrap" >ชนิดของพืช</th>
                                     <th scope="col">ศัตรูพืช</th> 
-                                    <th scope="col">พิกัด</th>
-                                    <th scope="col">วัน-เวลา</th>   
-                                    <th scope="col" class="text-nowrap" >รายละเอียด</th>     
-                                    <th></th>      
+                                    <th scope="col">วัน-เวลา</th>     
+                                    <th></th>   
+                                    <th></th>   
                                 </tr>
                             </thead>
                             <tbody>
@@ -104,14 +103,8 @@
                             <td class="text-nowrap"><%= pest.yname %></td>
                             <td class="text-nowrap"><%= pest.plant_type %></td>
                             <td class="text-nowrap"><%= pest.data_pest %></td>
-                            <td class="text-nowrap"><%= pest.lat %>,<%= pest.lon %></td>
                             <td class="text-nowrap"><%= pest.created_at %></td>
-                             <td class="text-nowrap" ><% if pest.description != nil %>
-                             <%= pest.description %>
-                               <% else %>
-                             -
-                              <% end %>
-                             </td>
+                            <td class="text-nowrap" ><a href="/pest_info/<%= pest.id %>" class="btn btn-success">รายละเอียด</a></td> 
                     <td class="text-nowrap">
                      <%= link_to "ลบข้อมูล", removedata_path(id: pest.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger ", :style => "color:white" %>
                     </td>

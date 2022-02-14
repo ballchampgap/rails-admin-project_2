@@ -26,4 +26,12 @@ class AdminController < ApplicationController
     data2.destroy
     redirect_to datainsert_path
   end
+
+  def data_info_epidemic
+    @epidemics = Epidemic.find(params[:id])
+  end
+
+  def data_info_pest
+    @pests = Pest.find(params[:id])
+  end
 end

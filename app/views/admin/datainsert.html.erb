@@ -104,19 +104,7 @@
                             <td class="text-nowrap"><%= epidemic.plant_type %></td>
                             <td class="text-nowrap"><%= epidemic.data_epidemic %></td>
                             <td class="text-nowrap"><%= epidemic.created_at %></td>
-                             <td class="text-nowrap" >
-                            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling<%= epidemic.id %>" aria-controls="offcanvasScrolling">Enable body scrolling</button>
-                         <!-- Modal -->
-                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling<%= epidemic.id %>" aria-labelledby="offcanvasScrollingLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <p>Try scrolling the rest of the page to see this option in action.</p>
-                    </div>
-                    </div>
-                    </td> 
+                             <td class="text-nowrap" ><a href="/epidemic_info/<%= epidemic.id %>" class="btn btn-success">รายละเอียด</a></td> 
                     <td class="text-nowrap">
                      <%= link_to "ลบข้อมูล", removedata2_path(id: epidemic.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger ", :style => "color:white" %>
                     </td>

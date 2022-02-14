@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+ <body>
+<div class="wrapper fadeInDown">
+  <div id="formContent"><br>
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h5>ผู้แจ้ง👨‍💼<%= @pests.yname %></h5><br>
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <div class="form-group has-icon">
+        <% if @pests.description != nil %>
+    <label for="foo"><strong>📣 รายละเอียด</strong></label><br>
+    <p name="description"><%= @pests.description %></p><% end %></div>
+    <div class="form-group has-icon">
+                <label for="foo"><strong>📌 พิกัด</strong></label><br>
+    <p name="description"><%= @pests.lat %>,<%= @pests.lon %></p>
+
+    </div>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/datainsert2">Back</a>
+    </div>
+
+  </div>
+</div>
+ </body>
+</html>

@@ -290,10 +290,10 @@ height:100%;
     <label for="foo"><strong>📣 รายละเอียด</strong></label><br>
     <input type="text" name="text1" value="<%= @epidemics.description %>" class="noscroll"/><% end %></div>
     <div class="form-group has-icon">
-                <label for="foo"><strong>📌 พิกัด</strong></label><br>
-    <textarea name="address" rows="4" id="address" value="<%= @epidemics.address %>" readonly class="noscroll"/></textarea>
-    <p name="description">ละติจูด:<%= @epidemics.lat %></p>
-    <p name="description">ลองติจูด:<%= @epidemics.lon %></p><br>
+   <dl class="row">
+  <dt class="col-sm-3 ">📌ที่อยู่</dt>
+  <dd class="col-sm-9"><%= @epidemics.address %></dd>
+</dl>
 <img src = "https://maps.googleapis.com/maps/api/staticmap?center=<%= @epidemics.lat %>,<%= @epidemics.lon %>&zoom=13&size=300x200&maptype=roadmap
 &markers=color:red%7Clabel:C%7C<%= @epidemics.lat %>,<%= @epidemics.lon %>
 &key=AIzaSyBk2-SxqIx59W28JYGXv4vxkq4NkFDrJmI">

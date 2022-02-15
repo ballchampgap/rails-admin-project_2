@@ -291,10 +291,10 @@ height:100%;
     <input type="text" name="text1" value="<%= @pests.description %>" class="noscroll"/>
     <% end %></div>
     <div class="form-group has-icon">
-                <label for="foo"><strong>📌 พิกัด</strong></label><br>
-    <textarea name="address" rows="4" id="address" value="<%= @pests.address %>" readonly class="noscroll"/></textarea>
-    <p name="description">ละติจูด:<%= @pests.lat %></p>
-    <p name="description">ลองติจูด:<%= @pests.lon %></p>
+    <dl class="row">
+  <dt class="col-sm-3 ">📌ที่อยู่</dt>
+  <dd class="col-sm-9"><%= @pests.address %></dd>
+</dl>
 <img src = "https://maps.googleapis.com/maps/api/staticmap?center=<%= @pests.lat %>,<%= @pests.lon %>&zoom=13&size=300x200&maptype=roadmap
 &markers=color:red%7Clabel:C%7C<%= @pests.lat %>,<%= @pests.lon %>
 &key=AIzaSyBk2-SxqIx59W28JYGXv4vxkq4NkFDrJmI">

@@ -34,4 +34,14 @@ class AdminController < ApplicationController
   def data_info_pest
     @pests = Pest.find(params[:id])
   end
+
+  def admin_list
+    @admins = Admin.all
+  end
+
+  def remove_admin
+    admin = Admin.find(params[:id])
+    admin.destroy
+    redirect_to admin_list_path
+  end
 end

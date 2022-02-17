@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_15_002204) do
+ActiveRecord::Schema.define(version: 2022_02_17_191141) do
 
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,8 +20,27 @@ ActiveRecord::Schema.define(version: 2022_02_15_002204) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer "invitation_limit"
+    t.string "invited_by_type"
+    t.bigint "invited_by_id"
+    t.integer "invitations_count", default: 0
     t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["invitation_token"], name: "index_admins_on_invitation_token", unique: true
+    t.index ["invited_by_id"], name: "index_admins_on_invited_by_id"
+    t.index ["invited_by_type", "invited_by_id"], name: "index_admins_on_invited_by"
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "admins_roles", id: false, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "admin_id"
+    t.bigint "role_id"
+    t.index ["admin_id", "role_id"], name: "index_admins_roles_on_admin_id_and_role_id"
+    t.index ["admin_id"], name: "index_admins_roles_on_admin_id"
+    t.index ["role_id"], name: "index_admins_roles_on_role_id"
   end
 
   create_table "epidemics", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -46,6 +65,17 @@ ActiveRecord::Schema.define(version: 2022_02_15_002204) do
     t.float "lat"
     t.float "lon"
     t.string "address"
+  end
+
+  create_table "roles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["name"], name: "index_roles_on_name"
+    t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
   end
 
 end

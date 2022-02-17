@@ -70,12 +70,9 @@
                                       <%= render "devise/shared/error_messages", resource: resource %>
                                        <% resource.class.invite_key_fields.each do |field| -%>
                                             <%= f.label field  %>
-                                            <%= f.text_field field , class:"form-control " %>
-                                          </div>
-                                        <% end %>
-                                         <div class="text-white">
-                                        <%= f.submit t("devise.invitations.new.submit_button"), class:"btn btn-primary text-white" %></div>
-                                        <% end -%><br>
+                                            <%= f.text_field field , class:"form-control " %><br>
+                                        <%= f.submit :Submit, class:"btn btn-primary text-white" %></div>
+                                        <% end -%><% end %><br>
                                          <a class="navbar-brand ps-3" href="/admin_list">Back</a>
                 </main>
                 <footer class="py-4 bg-light mt-ิ">

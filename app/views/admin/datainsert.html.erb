@@ -84,7 +84,7 @@
 
                                 <%= search_form_for @q, url: datainsert_path(@q), html: { method: :get } do |f| %>
                                 <%= f.search_field :yname_or_plant_type_or_data_epidemic_cont, type:"serch" %>
-                                <%= f.submit "Search!", class:"btn-primary text-white" %>
+                                <%= f.submit "ค้นหา", class:"btn-secondary text-white" %>
                                 <% end %><br>
                       
                                          <br><div class="card mb-4">
@@ -97,7 +97,7 @@
                             <table class="table table-sm table-hover table-bordered text-center">
                             <thead>
                                 <tr>
-                              <th scope="col"><%= sort_link(@q, :id, "#", default_order: :desc) %></th>
+                              <th scope="col"><%= sort_link(@q, :id, "ID", default_order: :desc) %></th>
                                     <th scope="col">ชื่อ</th>
                                     <th scope="col" class="text-nowrap" >ชนิดของพืช</th>
                                     <th scope="col">โรคระบาด</th> 
@@ -109,7 +109,7 @@
                             <tbody>
                         <% @epidemics.each_with_index do |epidemic, index| %>  
                             <tr>
-                            <td class="text-nowrap"><%= index+1 %></td>
+                            <td class="text-nowrap"><%= epidemic.id %></td>
                             <td class="text-nowrap"><%= epidemic.yname %></td>
                             <td class="text-nowrap"><%= epidemic.plant_type %></td>
                             <td class="text-nowrap"><%= epidemic.data_epidemic %></td>
@@ -122,8 +122,12 @@
                     </tr>
                                 </tbody>
                                 </table>
-                        </div>
-                    </div>
+                                </div>
+                            <div class="digg_pagination">
+                                <%= paginate @epidemics %>
+                        </div><br>
+<p>Export file:  <%= link_to 'xlsx', datainsert_path(format: :xlsx), target: :_blank %> | <%= link_to 'csv', datainsert_path(format: :csv), target: :_blank %></p>
+            </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">

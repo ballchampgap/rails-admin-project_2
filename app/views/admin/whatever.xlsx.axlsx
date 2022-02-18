@@ -1,0 +1,8 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Epidemic") do |sheet|
+  sheet.add_row ['id', 'yname', 'plant_type', 'data_epidemic', 'lat', 'lon', 'created_at', 'description', 'address'  ]
+  @epidemicsload.each do |epidemic|
+    sheet.add_row [epidemic.id, epidemic.yname, epidemic.plant_type, epidemic.data_epidemic, epidemic.lat, epidemic.lon, epidemic.created_at, epidemic.description, epidemic.address ]
+  end
+end

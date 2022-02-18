@@ -1,0 +1,8 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Pest") do |sheet|
+  sheet.add_row ['id', 'yname', 'plant_type', 'data_pest', 'lat', 'lon', 'created_at', 'description', 'address'  ]
+  @pestsload.each do |pest|
+    sheet.add_row [pest.id, pest.yname, pest.plant_type, pest.data_pest, pest.lat, pest.lon, pest.created_at, pest.description, pest.address ]
+  end
+end

@@ -8,13 +8,29 @@ class AdminController < ApplicationController
   end
 
   def datainsert
+    @epidemicsload = Epidemic.all
     @q = Epidemic.ransack(params[:q])
-    @epidemics = @q.result(distinct: true)
+    @epidemics = @q.result(distinct: true).page(params[:page]) 
+    respond_to do |format|
+      format.html
+      format.csv { send_data @epidemicsload.to_csv}
+      format.xlsx do
+        render xlsx: 'epidemicsload', template: 'admin/whatever'
+      end
+    end
   end
 
   def datainsert_2
+    @pestsload = Pest.all
     @q = Pest.ransack(params[:q])
-    @pests = @q.result(distinct: true)
+    @pests = @q.result(distinct: true).page(params[:page]) 
+    respond_to do |format|
+      format.html
+      format.csv { send_data @pestsload.to_csv}
+      format.xlsx do
+        render xlsx: 'pestsload', template: 'admin/whatever2'
+      end
+    end
   end
   
   def remove_data

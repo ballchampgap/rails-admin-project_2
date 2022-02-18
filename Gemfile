@@ -23,6 +23,10 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'strftime'
 gem 'devise_invitable', '~> 2.0.0'
+gem 'kaminari'
+gem 'will_paginate-bootstrap4'
+gem 'caxlsx'
+gem 'caxlsx_rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem "rolify"

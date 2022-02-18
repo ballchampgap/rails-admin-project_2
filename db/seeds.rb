@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Admin.create email: 'jirutsangchayza@gmail.com', password: 'password', name: 'ball'
-# Admin.create name: 'ball'
-# admin = Admin.first
-# admin.add_role(:super_admin)
+Admin.create name: 'ball'
+admin = Admin.first
+admin.add_role(:super_admin)
 # Epidemic.create(yname: "ball", plant_type: "rice", data_epidemic: "covid", lat: "18.7887002825974", lon: "98.96780650658836", description: "nocaption")
 
 

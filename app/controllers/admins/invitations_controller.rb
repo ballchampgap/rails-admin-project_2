@@ -45,6 +45,8 @@ module Admins
             flash_message = resource.active_for_authentication? ? :updated : :updated_not_active
             set_flash_message :notice, flash_message if is_flashing_format?
             resource.after_database_authentication
+            resource.name = params[:admin][:name]
+            resource.save
             sign_in(resource_name, resource)
             respond_with resource, location: after_accept_path_for(resource)
           else
@@ -69,6 +71,13 @@ module Admins
         admin = Admin.find(params[:id])
         admin.destroy
         redirect_to new_admin_invitation_path
+      end
+      
+      def invitation_accepted
+        resource.name = params[:admin][:name]
+        resource.save
+        sign_in(resource_name, resource)
+        # redirect_to admin_path
       end
     end
   end

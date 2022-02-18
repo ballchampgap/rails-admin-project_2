@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_191141) do
+ActiveRecord::Schema.define(version: 2022_02_18_183759) do
 
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_191141) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
+    t.string "name"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["invitation_token"], name: "index_admins_on_invitation_token", unique: true
     t.index ["invited_by_id"], name: "index_admins_on_invited_by_id"

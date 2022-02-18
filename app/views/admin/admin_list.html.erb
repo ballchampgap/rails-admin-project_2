@@ -72,10 +72,46 @@
                                 <% end %>
                                 </div>
                             </div>
+                            
                                          <br> <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 ตารางข้อมูลสมาชิก Admin
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                            <table class="table table-sm table-hover table-bordered text-center">
+                          <thead>
+                                <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">ชื่อ</th>
+                                    <th scope="col">E-mails</th>
+                                    <th scope="col" class="text-nowrap" >เวลา</th>
+                                   <% if current_admin.has_role? :super_admin %> <th></th>  <% end %>     
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% @admins.each_with_index do |admin, index| %> 
+                                <% if admin.name != nil %>
+                                <tr>
+                                <td class="text-nowrap"><%= index+1 %></td>
+                                <td class="text-nowrap"><%= admin.name %></td>
+                                <td class="text-nowrap"><%= admin.email %></td>
+                                <td class="text-nowrap"><%= admin.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
+                               <% if current_admin.has_role? :super_admin %>  <td class="text-nowrap">
+ <%= link_to "ลบข้อมูล", removeadmin_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger fw-bold ", :style => "color:white" %>
+</td><% end %> 
+<% end %>
+<% end %> 
+                          </tbody>
+                          </tr>
+                                </table>
+        
+                                         
+                            <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                ยังไม่ได้ยืนยันตัวตน
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -90,6 +126,7 @@
                             </thead>
                             <tbody>
                                 <% @admins.each_with_index do |admin, index| %> 
+                                <% if admin.name == nil %>
                                 <tr>
                                 <td class="text-nowrap"><%= index+1 %></td>
                                 <td class="text-nowrap"><%= admin.email %></td>
@@ -97,10 +134,11 @@
                                <% if current_admin.has_role? :super_admin %>  <td class="text-nowrap">
  <%= link_to "ลบข้อมูล", removeadmin_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger fw-bold ", :style => "color:white" %>
 </td><% end %> 
-<% end %>
+<% end %><% end %>  
                           </tbody>
                           </tr>
                                 </table>
+               
                         </div>
                     </div>
                 </main>

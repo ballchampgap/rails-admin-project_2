@@ -36,6 +36,11 @@
 
                                         <div class="field form-group">
                                           <% if f.object.class.require_password_on_accepting %>
+                                          <%= f.label :name, class: "col-form-label"%><br />
+                                          <%= f.text_field :name, class:"form-control form-control-user",required: true %>
+                                          </div><br>
+
+                                          <div class="field form-group">
                                                 <%= f.label :password, class: "col-form-label" %><br />
                                                 <%= f.password_field :password, class:"form-control form-control-user" %>
                                         </div><br>

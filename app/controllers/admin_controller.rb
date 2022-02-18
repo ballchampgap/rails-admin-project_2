@@ -8,11 +8,13 @@ class AdminController < ApplicationController
   end
 
   def datainsert
-    @epidemics = Epidemic.all
+    @q = Epidemic.ransack(params[:q])
+    @epidemics = @q.result(distinct: true)
   end
 
   def datainsert_2
-    @pests = Pest.all
+    @q = Pest.ransack(params[:q])
+    @pests = @q.result(distinct: true)
   end
   
   def remove_data

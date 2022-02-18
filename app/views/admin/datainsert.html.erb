@@ -76,8 +76,13 @@
                                                 </a>
                             </div>
                         </div>
+
+                                <%= search_form_for @q, url: datainsert_path(@q), html: { method: :get } do |f| %>
+                                <%= f.search_field :yname_or_plant_type_or_data_epidemic_cont %>
+                                <%= f.submit "Search!", class:"btn-primary text-white" %>
+                                <% end %><br>
                       
-                                          <div class="card mb-4">
+                                         <br><div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 ตารางข้อมูลโรคระบาด
@@ -87,7 +92,7 @@
                             <table class="table table-sm table-hover table-bordered text-center">
                             <thead>
                                 <tr>
-                              <th scope="col">#</th>
+                              <th scope="col"><%= sort_link(@q, :id, "#", default_order: :desc) %></th>
                                     <th scope="col">ชื่อ</th>
                                     <th scope="col" class="text-nowrap" >ชนิดของพืช</th>
                                     <th scope="col">โรคระบาด</th> 

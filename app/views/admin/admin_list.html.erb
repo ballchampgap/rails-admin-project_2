@@ -63,8 +63,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Admin List</h1>
                         <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                                <div class="card text-white mb-4">
+                                <div class="text-white mb-4">
                                 <% if current_admin.has_role? :super_admin %>
                                       <a class="btn btn-warning" href="/admins/invitation/new" >
                                                     เพิ่มผู้ดูแล
@@ -73,7 +72,7 @@
                                 </div>
                             </div>
                             
-                                         <br> <div class="card mb-4">
+                                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 ตารางข้อมูลสมาชิก Admin
@@ -107,7 +106,14 @@
                           </tr>
                                 </table>
         
-                                         
+</div>
+                    </div>
+                    </main>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <div class="row">        
+                         </div>                           
                             <div class="card mb-4">
                             <div class="card-header">
                                 ยังไม่ได้ยืนยันตัวตน

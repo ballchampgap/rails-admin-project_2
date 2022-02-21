@@ -61,6 +61,11 @@
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Dashboard</h1>
+                        <% if current_admin %>
+                        <p>
+                        <%= image_tag(current_admin.avatar_thumbnail) %>
+                        </p>
+                        <% end %>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>

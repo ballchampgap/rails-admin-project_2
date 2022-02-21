@@ -28,7 +28,7 @@ gem 'will_paginate-bootstrap4'
 gem 'caxlsx'
 gem 'caxlsx_rails'
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 gem "rolify"
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'faker'

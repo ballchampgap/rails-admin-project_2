@@ -75,6 +75,18 @@
                   <%= render "devise/shared/error_messages", resource: resource %>
 
                   <div class="field form-group">
+
+                    <%= image_tag(resource.avatar_thumbnail) if resource.avatar.attached? %>
+
+                  </div><br>
+
+                    <div class="field form-group">
+
+                      <%= f.file_field :avatar %>
+                    
+                    </div>
+
+                  <div class="field form-group">
                     <%= f.label :email,class: "col-form-label" %><br />
                     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                   </div>

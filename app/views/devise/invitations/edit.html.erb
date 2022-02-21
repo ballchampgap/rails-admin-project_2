@@ -33,7 +33,14 @@
                                    <%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put }) do |f| %>
                                     <%= render "devise/shared/error_messages", resource: resource %>
                                     <%= f.hidden_field :invitation_token, readonly: true %>
-
+                                     <div class="field form-group">          
+                                          <% if resource.avatar.attached? %>
+                                          <%= image_tag(resource.avatar) %>
+                                          <% else %>
+                                          <%= image_tag("/default_profile.jpg")%>
+                                          <% end %>
+                                        
+                                        </div>
                                         <div class="field form-group">
                                           <% if f.object.class.require_password_on_accepting %>
                                           <%= f.label :name, class: "col-form-label"%><br />

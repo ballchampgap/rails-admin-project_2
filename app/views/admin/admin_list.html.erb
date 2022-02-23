@@ -99,7 +99,6 @@
                                 <td class="text-nowrap"><%= index+1 %></td>
                                 <td class="text-nowrap"><%= admin.email %></td>
                                 <td class="text-nowrap"><%= admin.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
-                               <% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %>
                                  <% if current_admin.has_role? :super_admin %>
                                  <%if admin.has_role? :super_admin %>
                                  <td class="text-nowrap" >admin_super</td>
@@ -111,6 +110,9 @@
 <% end %>
 <% end %>
 <% end %>
+<% if current_admin.has_role? :super_admin %>
+
+<% else %>
 <%if admin.has_role? :super_admin %>
 <td class="text-nowrap"> admin_super</th>
 <% elsif admin.has_role? :admin_header %>
@@ -118,6 +120,8 @@
 <% else %>
 <td class="text-nowrap"> admin </td>
 <% end %>
+<% end %>
+<% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %>
 <td class="text-nowrap">
 <%if admin.has_role? :super_admin %>
 
@@ -126,7 +130,6 @@
  <% end %>
 </td><% end %> 
 <% end %>
-<% end %> 
                           </tbody>
                           </tr>
                                 </table>

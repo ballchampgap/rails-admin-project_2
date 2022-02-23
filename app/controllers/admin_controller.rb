@@ -62,4 +62,16 @@ class AdminController < ApplicationController
     admin.destroy
     redirect_to admin_list_path
   end
+
+  def addrole
+    admin = Admin.find(params[:id])
+    admin.add_role :admin_header
+    redirect_to admin_list_path
+  end
+  
+  def removerole
+    admin = Admin.find(params[:id])
+    admin.remove_role :admin_header
+    redirect_to admin_list_path
+  end
 end

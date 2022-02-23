@@ -64,7 +64,7 @@
                         <h1 class="mt-4">Admin List</h1>
                         <div class="row">
                                 <div class="text-white mb-4">
-                                <% if current_admin.has_role? :super_admin %>
+                                <% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %>
                                       <a class="btn btn-warning" href="/admins/invitation/new" >
                                                     เพิ่มผู้ดูแล
                                                 </a>
@@ -85,7 +85,9 @@
                               <th scope="col">#</th>
                                     <th scope="col">E-mails</th>
                                     <th scope="col" class="text-nowrap" >เวลา</th>
-                                   <% if current_admin.has_role? :super_admin %> <th></th>  <% end %>     
+                                   <% if current_admin.has_role? :super_admin %> <th>สถานะ</th> 
+                                   <th>
+                                   <% end %>     
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,8 +97,20 @@
                                 <td class="text-nowrap"><%= index+1 %></td>
                                 <td class="text-nowrap"><%= admin.email %></td>
                                 <td class="text-nowrap"><%= admin.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
-                               <% if current_admin.has_role? :super_admin %>  <td class="text-nowrap">
+                               <% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %>
+                                 <% if current_admin.has_role? :super_admin %>
+                                 <%if admin.has_role? :admin_header %>
+<td class="text-nowrap"> <%= link_to "admin_header", removerole_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :get %>
+                                <% else %>
+<td class="text-nowrap"> <%= link_to "admin", addrole_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :get %>
+<% end %>
+<% end %>
+<td class="text-nowrap">
+<%if admin.has_role? :super_admin %>
+
+<% else %>
  <%= link_to "ลบข้อมูล", removeadmin_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger fw-bold ", :style => "color:white" %>
+ <% end %>
 </td><% end %> 
 <% end %>
 <% end %> 

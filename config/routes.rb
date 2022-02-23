@@ -20,6 +20,8 @@ get '/pest_info/:id', to: 'admin#data_info_pest'
 get 'admin_list' => 'admin#admin_list'
 delete 'removeadmin' => 'admin#remove_admin'
 get 'admin/invitation/accept' => 'invitations#edit'
+get 'addrole' => 'admin#addrole'
+get 'removerole' => 'admin#removerole'
 # get 'logoutadmin' => 'admin/sessions#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   'resources :admin'

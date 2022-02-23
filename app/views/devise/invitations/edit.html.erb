@@ -36,8 +36,8 @@
 
                                         <div class="field form-group">
                                           <% if f.object.class.require_password_on_accepting %>
-                                          <%= f.label :name, class: "col-form-label"%><br />
-                                          <%= f.text_field :name, class:"form-control form-control-user",required: true %>
+                                           <%= f.hidden_field :name %>
+                                          <%= hidden_field_tag 'name', 'admin'  %>
                                           </div><br>
 
                                           <div class="field form-group">

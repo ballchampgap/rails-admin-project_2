@@ -83,7 +83,6 @@
                           <thead>
                                 <tr>
                               <th scope="col">#</th>
-                              <th scope="col">ชื่อ</th>
                                     <th scope="col">E-mails</th>
                                     <th scope="col" class="text-nowrap" >เวลา</th>
                                    <% if current_admin.has_role? :super_admin %> <th></th>  <% end %>     
@@ -94,7 +93,6 @@
                                 <% if admin.name != nil %>
                                 <tr>
                                 <td class="text-nowrap"><%= index+1 %></td>
-                                <td class="text-nowrap"><%= admin.name %></td>
                                 <td class="text-nowrap"><%= admin.email %></td>
                                 <td class="text-nowrap"><%= admin.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
                                <% if current_admin.has_role? :super_admin %>  <td class="text-nowrap">

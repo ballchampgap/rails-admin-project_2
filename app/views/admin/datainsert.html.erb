@@ -1,71 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-       <meta name=”viewport” content=”width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no”>
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Dashboard</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<html>
+<head>
+<title>data_input</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-   <style>
-   input[type=serch] {
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://your-site-or-cdn.com/fontawesome/v5.15.4/js/all.js" data-auto-a11y="true" ></script>
+<script src="https://your-site-or-cdn.com/fontawesome/v5.15.4/js/all.js" data-auto-replace-svg></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+input[type=serch] {
     border: 3px solid #555;
 }
-   </style>
-    </head>
-    <body >
-        <nav class=" navbar navbar-expand-sm navbar-dark bg-dark">
-            <!-- Sidebar Toggle-->
-            <div class="container-fluid">
-    <a class="navbar-brand">Admin Page</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/admin">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/datainsert">Data User Insert</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/admin_list">Admin List</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/admins/edit">Edit Profile</a>
-        </li>    
-                <li class="nav-item">
-           <a class="nav-link" href="/admins/sign_out" onclick="return confirm('Are you sure to logout?');">Log out</a>
-        </li>    
-                 
-      </ul>
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right">Admin Page</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" class="w3-circle w3-margin-right" style="width:46px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span>Welcome, <strong>Admin</strong></span><br>
+      <a href="/admins/sign_out" onclick="return confirm('Are you sure to logout?');" class="w3-bar-item w3-button">log out &nbsp<i class="fa fa-sign-out" aria-hidden="true"></i></a>
     </div>
   </div>
-        </nav>
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            
-                           
+  <hr>
+  <div class="w3-container">
+  <h5>Hello!</h5>
+    <p><%=current_admin.email%></p>
+  </div>
+  <div class="w3-bar-block">
+    <a href="/admin" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="/admin" class="w3-bar-item w3-button w3-padding "><i class="fa fa-tachometer" aria-hidden="true"></i>  Dashboard </a>
+    <a href="/datainsert" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-keyboard-o" aria-hidden="true"></i>  Data User Insert</a>
+    <a href="/admin_list" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Admin List</a>
+    <a href="/admins/edit" class="w3-bar-item w3-button w3-padding"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Edit Profile</a><br><br>
+  </div>
+</nav>
 
 
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Data User Insert</h1>
+                        <h1 class="mt-4">Data User Insert &nbsp<i class="fa fa-keyboard-o" aria-hidden="true"></i></h1>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card text-white mb-4">
@@ -81,15 +79,18 @@
                                                 </a>
                             </div>
                         </div>
-
-                                <%= search_form_for @q, url: datainsert_path(@q), html: { method: :get } do |f| %>
+ <%= search_form_for @q, url: datainsert_path(@q), html: { method: :get } do |f| %>
                                 <%= f.search_field :yname_or_plant_type_or_data_epidemic_cont, type:"serch" %>
                                 <%= f.submit "ค้นหา", class:"btn-secondary text-white" %>
                                 <% end %><br>
+   
+  </header>
+
+   
                       
                                          <br><div class="card mb-4">
                             <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
+                                <i class="fa fa-table" aria-hidden="true"></i>
                                 ตารางข้อมูลโรคระบาด (<%= @epidemics.count %>)
                             </div>
                             <div class="card-body">
@@ -128,20 +129,42 @@
                         </div><br>
 <p>Export file:  <%= link_to 'xlsx', datainsert_path(format: :xlsx), target: :_blank %> | <%= link_to 'csv', datainsert_path(format: :csv), target: :_blank %></p>
             </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
             </div>
         </div>
-    </body>
+  
+  <%# <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4>FOOTER</h4>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  </footer> %>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
 </html>

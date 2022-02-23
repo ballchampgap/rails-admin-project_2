@@ -111,6 +111,13 @@
 <% end %>
 <% end %>
 <% end %>
+<%if admin.has_role? :super_admin %>
+<td class="text-nowrap"> admin_super</th>
+<% elsif admin.has_role? :admin_header %>
+<td class="text-nowrap"> admin_header</th>
+<% else %>
+<td class="text-nowrap"> admin </td>
+<% end %>
 <td class="text-nowrap">
 <%if admin.has_role? :super_admin %>
 

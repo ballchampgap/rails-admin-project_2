@@ -83,11 +83,13 @@
                           <thead>
                                 <tr>
                               <th scope="col">#</th>
-                                    <th scope="col">E-mails</th>
+                                    <th scope="col">E-mail</th>
                                     <th scope="col" class="text-nowrap" >เวลา</th>
-                                   <% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %> <th>สถานะ</th> 
-                                   <th>
-                                   <% end %>     
+                                    <th scope="col" class="text-nowrap" >สถานะ</th>
+                                   <% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %>
+                                   <th></th>
+                                   <% end %> 
+     
                                 </tr>
                             </thead>
                             <tbody>
@@ -100,7 +102,7 @@
                                <% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %>
                                  <% if current_admin.has_role? :super_admin %>
                                  <%if admin.has_role? :super_admin %>
-                                 <td>admin_super</td>
+                                 <td class="text-nowrap" >admin_super</td>
                                  <% else %>
                                  <%if admin.has_role? :admin_header %>
 <td class="text-nowrap"> <%= link_to "admin_header", removerole_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :get %>
@@ -140,7 +142,7 @@
                           <thead>
                                 <tr>
                               <th scope="col">#</th>
-                                    <th scope="col">E-mails</th>
+                                    <th scope="col">E-mail</th>
                                     <th scope="col" class="text-nowrap" >เวลา</th>
                                    <% if current_admin.has_role? :super_admin %> <th></th>  <% end %>     
                                 </tr>

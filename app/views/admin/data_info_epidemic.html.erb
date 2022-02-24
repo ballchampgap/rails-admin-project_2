@@ -283,15 +283,15 @@ height:100%;
     <!--Form -->
     <form>      
       <div class="form-group has-icon">
-        <dl class="row gx-3">
-    <dt class="col-sm-6 ">📣 รายละเอียด</dt>
-    <dd class="col-sm-6"><%= @epidemics.description %></dd>
+        <dl class="row gx-2">
+    <dt class="col-sm-4 ">📣 รายละเอียด</dt>
+    <dd class="col-sm-8"><%= @epidemics.description %></dd>
     </div>
 </dl>
     <div class="form-group has-icon">
-   <dl class="row gx-3">
-  <dt class="col-sm-6 ">📌ที่อยู่</dt>
-  <dd class="col-sm-6"><%= @epidemics.address %></dd>
+   <dl class="row gx-2">
+  <dt class="col-sm-4 ">📌ที่อยู่</dt>
+  <dd class="col-sm-8"><%= @epidemics.address %></dd>
 </dl>
 <img src = "https://maps.googleapis.com/maps/api/staticmap?center=<%= @epidemics.lat %>,<%= @epidemics.lon %>&zoom=13&size=300x200&maptype=roadmap
 &markers=color:red%7Clabel:C%7C<%= @epidemics.lat %>,<%= @epidemics.lon %>

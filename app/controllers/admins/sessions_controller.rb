@@ -4,6 +4,7 @@
 module Admins
     # Description/Explanation of SessionController class
     class SessionsController < Devise::SessionsController
+      layout false
       def create
         admin = Admin.find_by(email: sign_in_params[:email])
         if admin&.valid_password?(sign_in_params[:password])

@@ -1,3 +1,5 @@
 class ApplicationController < ActionController::Base
-require 'csv'
+layout 'application'
+Admin.all
+    require 'csv'
 end

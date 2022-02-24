@@ -5,6 +5,7 @@ module Admins
     # Description/Explanation of InvitationsControlle class
     class InvitationsController < Devise::InvitationsController
       # GET /resource/invitation/new
+      layout false
       def new
       self.resource = resource_class.new
       end
@@ -29,7 +30,7 @@ module Admins
       def edit
         set_minimum_password_length
         resource.invitation_token = params[:invitation_token]
-        render :edit
+        render(layout: false)
       end
   
       # PUT /resource/invitation
@@ -37,9 +38,6 @@ module Admins
         raw_invitation_token = update_resource_params[:invitation_token]
         self.resource = accept_resource
         invitation_accepted = resource.errors.empty?
-    
-        yield resource if block_given?
-    
         if invitation_accepted
           if resource.class.allow_insecure_sign_in_after_accept
             flash_message = resource.active_for_authentication? ? :updated : :updated_not_active

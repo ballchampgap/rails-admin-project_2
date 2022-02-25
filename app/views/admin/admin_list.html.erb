@@ -4,14 +4,6 @@
  <div class="container-fluid px-4">
                         <h1 class="mt-4">Admin List &nbsp<i class="fa fa-users fa-fw"></i></h1>
                         <div class="row">
-                                <div class="text-white mb-4">
-                                <% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %>
-                                      <a class="btn btn-warning" href="/admins/invitation/new" >
-                                                    Add
-                                                </a>
-                                <% end %>
-                                </div>
-                            </div>
    
   </header>
 <div class="card mb-4">
@@ -29,7 +21,10 @@
                                     <th scope="col" class="text-nowrap" >Date-Time</th>
                                     <th scope="col" class="text-nowrap" >Role</th>
                                    <% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %>
-                                   <th></th>
+                                   <th scope="col" class="text-nowrap" >
+                                      <%# <a class="btn btn-primary fw-bold" href="/admins/invitation/new" > %>
+                                                  <a href="/admins/invitation/new" title="Add"  > <i class="fa fa-address-card-o" aria-hidden="true" style='font-size:30px'></i></a>
+                                                </th>
                                    <% end %> 
      
                                 </tr>

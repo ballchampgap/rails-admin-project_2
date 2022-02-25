@@ -1,7 +1,7 @@
  <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Data User Insert &nbsp<i class="fa fa-keyboard-o" aria-hidden="true"></i></h1>
+                        <h1 class="mt-4">Data &nbsp<i class="fa fa-keyboard-o" aria-hidden="true"></i></h1>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card text-white mb-4">
@@ -29,14 +29,13 @@
                                           <br> <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fa fa-table" aria-hidden="true"></i>
-                                Pest Table (<%= @pests.count %>)
+                                <%= sort_link(@q, :id, "Pest Table", default_order: :desc) %> (<%= @pests.count %>)
                             </div>
                             <div class="card-body">
                             <div class="table-responsive">
                             <table class="table table-sm table-hover table-bordered text-center ">
                             <thead>
                                 <tr>
-                              <th scope="col"><%= sort_link(@q, :id, "ID", default_order: :desc) %></th>
                                     <th scope="col">Name</th>
                                     <th scope="col" class="text-nowrap" >Type</th>
                                     <th scope="col">Pest</th> 
@@ -48,7 +47,6 @@
                             <tbody>
                         <% @pests.each_with_index do |pest, index| %>  
                             <tr>
-                            <td class="text-nowrap"><%= pest.id %></td>
                             <td class="text-nowrap"><%= pest.yname %></td>
                             <td class="text-nowrap"><%= pest.plant_type %></td>
                             <td class="text-nowrap"><%= pest.data_pest %></td>

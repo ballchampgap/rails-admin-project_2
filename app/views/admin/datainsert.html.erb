@@ -1,7 +1,7 @@
 <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Data User Insert &nbsp<i class="fa fa-keyboard-o" aria-hidden="true"></i></h1>
+                        <h1 class="mt-4">Data &nbsp<i class="fa fa-keyboard-o" aria-hidden="true"></i></h1>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card text-white mb-4">
@@ -13,12 +13,13 @@
                             <div class="col-xl-3 col-md-6">
                                 <div class="card text-white mb-4">
                                      <a class="btn btn-success" href="/datainsert2" >
-                                                Pest
+                                                Pest<i class="fa-solid fa-circle-plus fa-beat"></i>
                                                 </a>
                             </div>
                         </div>
+                        
  <%= search_form_for @q, url: datainsert_path(@q), html: { method: :get } do |f| %>
-                                <%= f.search_field :yname_or_plant_type_or_data_epidemic_cont, type:"serch" %>
+                                <%= f.search_field :yname_or_plant_type_or_data_epidemic_cont, type:"serch" %>&nbsp
                                 <%= f.submit "Search!", class:"btn-secondary text-white" %>
                                 <% end %><br>
    
@@ -29,14 +30,13 @@
                                          <br><div class="card mb-4">
                             <div class="card-header">
                                 <i class="fa fa-table" aria-hidden="true"></i>
-                                Epidemic Table (<%= @epidemics.count %>)
+                                <%= sort_link(@q, :id, "Epidemic Table", default_order: :desc) %> (<%= @epidemics.count %>)
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                             <table class="table table-sm table-hover table-bordered text-center">
                             <thead>
                                 <tr>
-                              <th scope="col"><%= sort_link(@q, :id, "ID", default_order: :desc) %></th>
                                     <th scope="col">Name</th>
                                     <th scope="col" class="text-nowrap" >Type</th>
                                     <th scope="col">Epidemic</th> 
@@ -48,7 +48,6 @@
                             <tbody>
                         <% @epidemics.each_with_index do |epidemic, index| %>  
                             <tr>
-                            <td class="text-nowrap"><%= epidemic.id %></td>
                             <td class="text-nowrap"><%= epidemic.yname %></td>
                             <td class="text-nowrap"><%= epidemic.plant_type %></td>
                             <td class="text-nowrap"><%= epidemic.data_epidemic %></td>

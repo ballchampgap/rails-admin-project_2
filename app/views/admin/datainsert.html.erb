@@ -6,20 +6,20 @@
                             <div class="col-xl-3 col-md-6">
                                 <div class="card text-white mb-4">
                                       <a class="btn btn-warning" href="/datainsert" >
-                                                    โรคระบาด
+                                                    Epidemic
                                                 </a>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card text-white mb-4">
                                      <a class="btn btn-success" href="/datainsert2" >
-                                                ศัตรูพืช
+                                                Pest
                                                 </a>
                             </div>
                         </div>
  <%= search_form_for @q, url: datainsert_path(@q), html: { method: :get } do |f| %>
                                 <%= f.search_field :yname_or_plant_type_or_data_epidemic_cont, type:"serch" %>
-                                <%= f.submit "ค้นหา", class:"btn-secondary text-white" %>
+                                <%= f.submit "Search!", class:"btn-secondary text-white" %>
                                 <% end %><br>
    
   </header>
@@ -29,7 +29,7 @@
                                          <br><div class="card mb-4">
                             <div class="card-header">
                                 <i class="fa fa-table" aria-hidden="true"></i>
-                                ตารางข้อมูลโรคระบาด (<%= @epidemics.count %>)
+                                Epidemic Table (<%= @epidemics.count %>)
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -37,10 +37,10 @@
                             <thead>
                                 <tr>
                               <th scope="col"><%= sort_link(@q, :id, "ID", default_order: :desc) %></th>
-                                    <th scope="col">ชื่อ</th>
-                                    <th scope="col" class="text-nowrap" >ชนิดของพืช</th>
-                                    <th scope="col">โรคระบาด</th> 
-                                    <th scope="col">วัน-เวลา</th>       
+                                    <th scope="col">Name</th>
+                                    <th scope="col" class="text-nowrap" >Type</th>
+                                    <th scope="col">Epidemic</th> 
+                                    <th scope="col">Date-Time</th>       
                                     <th></th>
                                     <th></th>      
                                 </tr>
@@ -53,9 +53,9 @@
                             <td class="text-nowrap"><%= epidemic.plant_type %></td>
                             <td class="text-nowrap"><%= epidemic.data_epidemic %></td>
                             <td class="text-nowrap"><%= epidemic.created_at %></td>
-                             <td class="text-nowrap" ><a href="/epidemic_info/<%= epidemic.id %>" class="btn btn-success">รายละเอียด</a></td> 
+                             <td class="text-nowrap" ><a href="/epidemic_info/<%= epidemic.id %>" class="btn btn-success">Details</a></td> 
                     <td class="text-nowrap">
-                     <%= link_to "ลบข้อมูล", removedata2_path(id: epidemic.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger ", :style => "color:white" %>
+                     <%= link_to "Delete", removedata2_path(id: epidemic.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger ", :style => "color:white" %>
                     </td>
                      <% end %> 
                     </tr>

@@ -7,7 +7,7 @@
                                 <div class="text-white mb-4">
                                 <% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %>
                                       <a class="btn btn-warning" href="/admins/invitation/new" >
-                                                    เพิ่มผู้ดูแล
+                                                    Add
                                                 </a>
                                 <% end %>
                                 </div>
@@ -17,7 +17,7 @@
 <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fa fa-user" aria-hidden="true"></i>
-                                ตารางข้อมูลสมาชิก Admin
+                                Admin List Table
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -26,8 +26,8 @@
                                 <tr>
                               <th scope="col">#</th>
                                     <th scope="col">E-mail</th>
-                                    <th scope="col" class="text-nowrap" >เวลา</th>
-                                    <th scope="col" class="text-nowrap" >สถานะ</th>
+                                    <th scope="col" class="text-nowrap" >Date-Time</th>
+                                    <th scope="col" class="text-nowrap" >Role</th>
                                    <% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %>
                                    <th></th>
                                    <% end %> 
@@ -43,12 +43,12 @@
                                 <td class="text-nowrap"><%= admin.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
                                  <% if current_admin.has_role? :super_admin %>
                                  <%if admin.has_role? :super_admin %>
-                                 <td class="text-nowrap" >admin_super</td>
+                                 <td class="text-nowrap" >Admin Super</td>
                                  <% else %>
                                  <%if admin.has_role? :admin_header %>
-<td class="text-nowrap"> <%= link_to "admin_header", removerole_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :get %>
+<td class="text-nowrap"> <%= link_to "Admin", removerole_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :get %>
                                 <% else %>
-<td class="text-nowrap"> <%= link_to "admin", addrole_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :get %>
+<td class="text-nowrap"> <%= link_to "Staff", addrole_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :get %>
 <% end %>
 <% end %>
 <% end %>
@@ -56,11 +56,11 @@
 
 <% else %>
 <%if admin.has_role? :super_admin %>
-<td class="text-nowrap"> admin_super</th>
+<td class="text-nowrap"> Admin Super</th>
 <% elsif admin.has_role? :admin_header %>
-<td class="text-nowrap"> admin_header</th>
+<td class="text-nowrap"> Admin </th>
 <% else %>
-<td class="text-nowrap"> admin </td>
+<td class="text-nowrap"> Staff </td>
 <% end %>
 <% end %>
 <% if current_admin.has_role? :super_admin or current_admin.has_role? :admin_header %>
@@ -68,7 +68,7 @@
 <%if admin.has_role? :super_admin %>
 
 <% else %>
- <%= link_to "ลบข้อมูล", removeadmin_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger fw-bold ", :style => "color:white" %>
+ <%= link_to "Delete", removeadmin_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger fw-bold ", :style => "color:white" %>
  <% end %>
 </td><% end %> 
 <% end %>
@@ -88,7 +88,7 @@
                             <div class="card mb-4">
                             <div class="card-header">
                             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                ยังไม่ได้ยืนยันตัวตน
+                                Not Activate
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -97,7 +97,7 @@
                                 <tr>
                               <th scope="col">#</th>
                                     <th scope="col">E-mail</th>
-                                    <th scope="col" class="text-nowrap" >เวลา</th>
+                                    <th scope="col" class="text-nowrap" >Date-Time</th>
                                    <% if current_admin.has_role? :super_admin %> <th></th>  <% end %>     
                                 </tr>
                             </thead>
@@ -109,7 +109,7 @@
                                 <td class="text-nowrap"><%= admin.email %></td>
                                 <td class="text-nowrap"><%= admin.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
                                <% if current_admin.has_role? :super_admin %>  <td class="text-nowrap">
- <%= link_to "ลบข้อมูล", removeadmin_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger fw-bold ", :style => "color:white" %>
+ <%= link_to "Delete", removeadmin_path(id: admin.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger fw-bold ", :style => "color:white" %>
 </td><% end %> 
 <% end %><% end %>  
                           </tbody>

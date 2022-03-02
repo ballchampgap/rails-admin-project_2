@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_25_202750) do
+ActiveRecord::Schema.define(version: 2022_03_02_120408) do
 
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -42,6 +42,22 @@ ActiveRecord::Schema.define(version: 2022_02_25_202750) do
     t.index ["admin_id", "role_id"], name: "index_admins_roles_on_admin_id_and_role_id"
     t.index ["admin_id"], name: "index_admins_roles_on_admin_id"
     t.index ["role_id"], name: "index_admins_roles_on_role_id"
+  end
+
+  create_table "complain_sections", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "section"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "complains", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "yname"
+    t.string "section"
+    t.string "body"
+    t.string "user_id"
+    t.string "reply"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "epidemics", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

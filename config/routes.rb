@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # resources :complain
+  resources :complain
+  get 'complain/index'
+  delete'complain_delet' => 'complain#destroy'
   devise_for :admins, controllers: { sessions: 'admins/sessions', registrations: 'admins/registrations', passwords: 'admins/passwords', invitations: 'admins/invitations' }
   root 'admin#home'
   get '/admin' => 'admin#home'

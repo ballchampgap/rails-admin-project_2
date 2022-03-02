@@ -1,0 +1,90 @@
+<!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+   
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">Complain &nbsp<i class="fa fa-commenting" aria-hidden="true"></i></h1>
+                        <div class="row">
+   
+  </header>
+<div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                Not Reply
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                            <table class="table table-sm table-hover table-bordered text-center">
+                          <thead>
+                                <tr>
+                              <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col" class="text-nowrap" >Title</th>
+                                    <th scope="col" class="text-nowrap" >Date-Time</th>
+                                   <th scope="col" class="text-nowrap" ></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% @complains.each_with_index do |complain, index| %> 
+                                <% if complain.reply == nil %>
+                                <tr>
+                                <td class="text-nowrap"><%= index+1 %></td>
+                                <td class="text-nowrap"><%= complain.yname %></td>
+                                 <td class="text-nowrap"><%= complain.section %></td>
+                                <td class="text-nowrap"><%= complain.created_at %></td>
+                                <td class="text-nowrap">
+                                <%= link_to "Reply",edit_complain_path(id: complain.id), method: :get, :class => "btn btn-warning fw-bold ", :style => "color:white" %></td>
+                                </td>
+                                <% end %>
+                                <% end %>
+
+                          </tbody>
+                          </tr>
+                                </table>
+        
+                </div>
+                    </div>
+                    </main>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <div class="row">        
+                         </div>                           
+                            <div class="card mb-4">
+                            <div class="card-header">
+                            <i class="fa fa-reply" aria-hidden="true"></i>
+                                Reply Done
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                            <table class="table table-sm table-hover table-bordered text-center">
+                          <thead>
+                                <tr>
+                              <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col" class="text-nowrap" >Title</th>
+                                    <th scope="col" class="text-nowrap" >Date-Time</th>
+                                   <th scope="col" class="text-nowrap" ></th>
+                                   <th scope="col" class="text-nowrap" ></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                             <% @complains.each_with_index do |complain, index| %> 
+                                <% if complain.reply != nil %>
+                                <tr>
+                                <td class="text-nowrap"><%= index+1 %></td>
+                                <td class="text-nowrap"><%= complain.yname %></td>
+                                 <td class="text-nowrap"><%= complain.section %></td>
+                                <td class="text-nowrap"><%= complain.created_at %></td>
+                                
+                                <td class="text-nowrap">
+                               <%= link_to "Delete",complain_delet_path(id: complain.id), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger fw-bold ", :style => "color:white" %></td>
+                                <% end %>
+                                <% end %>
+                          </tbody>
+                          </tr>
+                                </table>
+               
+                        </div>
+                    </div>
+  </div>
+  </div>

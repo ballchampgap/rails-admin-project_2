@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'sendgrid-ruby'
 ruby '3.0.0'
 gem 'devise'
+gem 'line-bot-api'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 # Use mysql as the database for Active Record

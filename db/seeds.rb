@@ -24,6 +24,6 @@
 # Pest.create(yname: "rewg", plant_type: "rice", data_pest: "covid", lat: "18.7887002825974", lon: "98.96780650658836", description: "rwsgtrwegergrewhgerHUET5UHJET5UHTREHJRTHTRHERT")
 # Epidemic.create(yname: "wegfew", plant_type: "cron", data_epidemic: "covid8", lat: "18.79351469159914", lon: "98.97799890080805", description: "erhgeryherjhrtujtyiyuoikuyioliuljklhjltuolyuiok")
 
-Complain.create(yname: "ball", section: "covidasf", body: "asnhgyhfgiehfihefrwegrewgrewgerwsgerdgerdgreg", user_id: "269874")
+Complain.create(yname: "yo", section: "covidasf", body: "asnhgyhfgiehfihefrwegrewgrewgerwsgerdgerdgreg", user_id: "Ude0bd516dcc3e58d3ae92afae68cd692")
 Complain.create(yname: "top", section: "covidasf", body: "asnhgyhfgiehfihef", user_id: "269874")
 Complain.create(yname: "Gap", section: "covidasf", body: "asnhgyhfgiehfihef", user_id: "269874")

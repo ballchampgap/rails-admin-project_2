@@ -40,13 +40,13 @@ class ComplainsController < ApplicationController
       if @complain.update(complain_params)
         message = {
           type: 'text',
-          text: @complain.reply
+          text: 'หัวข้อ:'+ @complain.section + '________ รายละเอียด:'+ @complain.body + '________ข้อความตอบกลับจากแอดมิน:'+ @complain.reply 
         }
         client = Line::Bot::Client.new { |config|
             config.channel_secret = "139c143c0618ba4d7827d1260e11dcb0"
             config.channel_token = "QIesJhRg7ms6O1JLTzEmOz485/19FhMG7cWdL65E3Gb88RgAqOvTCxfUkO/afMp1lPgI9paQ5XnjwwM/Y4k+Iidn/aocD7oaU6HBGXBeoD9G4oarK8YDHZg+B1jpZQoQ4MTcjZ8KCC1EsgfW6lj3MQdB04t89/1O/w1cDnyilFU="
         }
-        response = client.push_message(@complain.user_id, message)
+        response = client.push_message(@complain.id_user, message)
         p response
 
         format.html { redirect_to complain_url(@complain), notice: "Complain was successfully updated." }

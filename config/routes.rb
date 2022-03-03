@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     
   end
 get 'read' => 'admin#read'
+get 'manage_data' => 'admin#manage_data'
 get 'datainsert' => 'admin#datainsert'
 get 'datainsert2' => 'admin#datainsert_2'
 delete 'removedata' => 'admin#remove_data'

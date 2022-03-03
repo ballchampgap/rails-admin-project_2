@@ -75,4 +75,8 @@ class AdminController < ApplicationController
     admin.remove_role :admin_header
     redirect_to admin_list_path
   end
+
+  def manage_data
+
+  end
 end

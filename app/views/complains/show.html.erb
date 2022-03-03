@@ -1,0 +1,32 @@
+    <header class="w3-container" style="padding-top:22px">
+   <div class="container-fluid px-4">
+                        <h1 class="mt-4">Reply &nbsp<i class="fa fa-reply" aria-hidden="true"></i></h1>
+                        </div>
+  </header>
+<div class="card mb-4 text-center">
+   <div class="card-body">
+                                <div class="fadeIn first">
+                      <h5>Name: <%= @complain.yname %></h5><br>
+                    </div>
+
+
+                 <form>
+      <div class="form-group has-icon text-center">
+    <p><strong>Title</strong></p>
+    <p><%= @complain.section %></p>
+  </div>
+    <div class="form-group has-icon">
+  <p><strong>Details</strong></p>
+  <p><%= @complain.body %></p>
+<% if @complain.reply != nil %>
+<p><strong>Reply</strong></p>
+<p><%= @complain.reply %></p>
+<% end %>
+</div>
+<% if @complain.reply == nil %>
+<%= link_to 'Reply', edit_complain_path(@complain) %> |
+<% end %>
+<%= link_to 'Back', complains_path %>
+  </div>  </div>
+     
+  </div>

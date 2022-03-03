@@ -1,0 +1,38 @@
+<%= form_with(model: complain) do |form| %>
+  <% if complain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(complain.errors.count, "error") %> prohibited this complain from being saved:</h2>
+
+      <ul>
+        <% complain.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :name, class: "col-form-label" %><br>
+    <%= form.text_area :yname,:readonly => true %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :title, class: "col-form-label"%><br>
+    <%= form.text_area :section,:readonly => true %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :detils, class: "col-form-label" %><br>
+    <%= form.text_area :body,:readonly => true %>
+  </div>
+
+
+  <div class="field form-group">
+    <%= form.label :reply, class: "col-form-label" %><br>
+    <%= form.text_area :reply %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Sent", class:"btn btn-primary text-white" %>
+  </div>
+<% end %>

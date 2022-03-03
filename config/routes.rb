@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :complain_sections
+  resources :complains
   # resources :complain
   devise_for :admins, controllers: { sessions: 'admins/sessions', registrations: 'admins/registrations', passwords: 'admins/passwords', invitations: 'admins/invitations' }
   root 'admin#home'

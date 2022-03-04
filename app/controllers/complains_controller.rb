@@ -38,10 +38,113 @@ class ComplainsController < ApplicationController
   def update
     respond_to do |format|
       if @complain.update(complain_params)
-        message = {
-          type: 'text',
-          text: 'หัวข้อ:'+ @complain.section + '________ รายละเอียด:'+ @complain.body + '________ข้อความตอบกลับจากแอดมิน:'+ @complain.reply 
+        message = 
+          {
+            "type": "flex",
+      "altText": "ข้อความตอบกลับจากแอดมิน",
+      "contents": {
+        "type": "bubble",
+        "hero": {
+          "type": "image",
+          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+          "size": "full",
+          "aspectRatio": "20:13",
+          "aspectMode": "cover",
+          "action": {
+            "type": "uri",
+            "uri": "http://linecorp.com/"
+          }
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "ข้อความตอบกลับจากแอดมิน",
+              "weight": "bold",
+              "size": "xl"
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "margin": "lg",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "spacing": "sm",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "หัวข้อ",
+                      "color": "#aaaaaa",
+                      "size": "sm",
+                      "flex": 3
+                    },
+                    {
+                      "type": "text",
+                      "text": @complain.section,
+                      "wrap": true,
+                      "color": "#666666",
+                      "size": "sm",
+                      "flex": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "spacing": "sm",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "รายละเอียด",
+                      "color": "#aaaaaa",
+                      "size": "sm",
+                      "flex": 3
+                    },
+                    {
+                      "type": "text",
+                      "text": @complain.body,
+                      "wrap": true,
+                      "color": "#666666",
+                      "size": "sm",
+                      "flex": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "spacing": "sm",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "ข้อความตอบกลับ",
+                      "color": "#aaaaaa",
+                      "size": "sm",
+                      "flex": 3
+                    },
+                    {
+                      "type": "text",
+                      "text": @complain.reply,
+                      "wrap": true,
+                      "color": "#666666",
+                      "size": "sm",
+                      "flex": 3
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
+      }
+
+          }
+        
         client = Line::Bot::Client.new { |config|
             config.channel_secret = "139c143c0618ba4d7827d1260e11dcb0"
             config.channel_token = "QIesJhRg7ms6O1JLTzEmOz485/19FhMG7cWdL65E3Gb88RgAqOvTCxfUkO/afMp1lPgI9paQ5XnjwwM/Y4k+Iidn/aocD7oaU6HBGXBeoD9G4oarK8YDHZg+B1jpZQoQ4MTcjZ8KCC1EsgfW6lj3MQdB04t89/1O/w1cDnyilFU="

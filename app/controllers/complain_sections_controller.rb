@@ -1,4 +1,5 @@
 class ComplainSectionsController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_complain_section, only: %i[ show edit update destroy ]
 
   # GET /complain_sections or /complain_sections.json

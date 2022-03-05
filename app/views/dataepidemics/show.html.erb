@@ -1,0 +1,19 @@
+<header class="w3-container" style="padding-top:22px">
+   
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">Epidemic Data &nbsp<i class="fa fa-eye" aria-hidden="true"></i></h1></a>
+                        <div class="row">
+   
+  </header>
+  <div class="card mb-4">
+ <div class="card-body">
+<h5>ชื่อโรคภาษาไทย: <%= @dataepidemic.name_th%>  </h5>
+<h5>ภาษาอังกฤษ: <%= @dataepidemic.name_en%>  </h5>
+<p><%= @dataepidemic.body%>  </p>
+
+<%= link_to "Back", dataepidemics_path %>
+<%= link_to "Edit", edit_dataepidemic_path(@dataepidemic) %>
+<%= link_to "Delete", dataepidemic_path(@dataepidemic), method: :delete, data: { confirm: "Are you sure?"} %>
+</div>
+                    </div>
+

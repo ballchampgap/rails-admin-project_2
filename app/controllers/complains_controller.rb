@@ -1,9 +1,10 @@
 class ComplainsController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_complain, only: %i[ show edit update destroy ]
 
   # GET /complains or /complains.json
   def index
-    @complains = Complain.all
+    @complains = Complain.all.page(params[:page]) 
   end
 
   # GET /complains/1 or /complains/1.json
@@ -46,7 +47,7 @@ class ComplainsController < ApplicationController
         "type": "bubble",
         "hero": {
           "type": "image",
-          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+          "url": "https://media.discordapp.net/attachments/900355262584610826/949607708498223154/MES-01.jpg",
           "size": "full",
           "aspectRatio": "20:13",
           "aspectMode": "cover"

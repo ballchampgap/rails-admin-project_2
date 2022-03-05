@@ -1,0 +1,19 @@
+<header class="w3-container" style="padding-top:22px">
+   
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">Pest Data &nbsp<i class="fa fa-eye" aria-hidden="true"></i></h1></a>
+                        <div class="row">
+   
+  </header>
+  <div class="card mb-4">
+ <div class="card-body">
+<h5>ชื่อโรคภาษาไทย: <%= @datapest.name_th%>  </h5>
+<h5>ภาษาอังกฤษ: <%= @datapest.name_en%>  </h5>
+<p><%= @datapest.body%>  </p>
+
+<%= link_to "Back", datapests_path %>
+<%= link_to "Edit", edit_datapest_path(@datapest) %>
+<%= link_to "Delete", datapest_path(@datapest), method: :delete, data: { confirm: "Are you sure?"} %>
+</div>
+                    </div>
+

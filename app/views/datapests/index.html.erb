@@ -1,0 +1,49 @@
+<header class="w3-container" style="padding-top:22px">
+   
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">Pest Data &nbsp<i class="fa fa-paw" aria-hidden="true"></i></h1></a>
+                        <div class="row">
+   
+  </header>
+<div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa fa-bug" aria-hidden="true"></i>&nbsp
+                                <a href="/datapests">List Table</a> <%= params[:plantecopest] %>&nbsp
+                             <% Plantecopest.all.each do |plantecopest| %>
+    <%= link_to plantecopest.name_th, datapests_path(plantecopest: plantecopest.name_th), class: "link" %>
+  <% end %>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                            <table class="table table-sm table-hover table-bordered text-center">
+                          <thead>
+                                <tr>
+                              <th scope="col"> <a href="/datapests/new"><i class="fa fa-plus" aria-hidden="true"></i></a></th>
+                                    <th scope="col">Name in thai</th>
+                                    <th scope="col" class="text-nowrap" >Name in english</th>
+                                    <th scope="col" class="text-nowrap" ></th>
+                                    <th scope="col" class="text-nowrap" ></th>
+                                    <th scope="col" class="text-nowrap" ></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            <% @datapests.each_with_index do |datap, index| %> 
+                            <tr>
+                                <td class="text-nowrap"><%= index+1 %></td>
+                                <td class="text-nowrap"><%= datap.name_th %></td>
+                                <td class="text-nowrap"><%= datap.name_en %></td>
+                                <td class="text-nowrap"><%= link_to "Show", datapest_path(datap) %></td>
+                              <td class="text-nowrap"><%= link_to "Edit", edit_datapest_path(datap) %></td>
+                                <td class="text-nowrap"><%= link_to "Delete", datapest_path(datap), method: :delete, data: { confirm: "Are you sure?"} %></td>
+
+<% end %> 
+
+                              </tbody>
+                          </tr>
+                                </table>
+               
+                        </div>
+                    </div>
+
+  

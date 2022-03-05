@@ -1,0 +1,49 @@
+<header class="w3-container" style="padding-top:22px">
+   
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">Epidemic Data &nbsp<i class="fa fa-pagelines" aria-hidden="true"></i></h1></a>
+                        <div class="row">
+   
+  </header>
+<div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa fa-leaf" aria-hidden="true"></i>&nbsp
+                                <a href="/dataepidemics">List Table</a> <%= params[:plantecoepidemic] %>&nbsp
+                             <% Plantecoepidemic.all.each do |plantecoepidemic| %>
+    <%= link_to plantecoepidemic.name_th, dataepidemics_path(plantecoepidemic: plantecoepidemic.name_th), class: "link" %>
+  <% end %>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                            <table class="table table-sm table-hover table-bordered text-center">
+                          <thead>
+                                <tr>
+                              <th scope="col"> <a href="/dataepidemics/new"><i class="fa fa-plus" aria-hidden="true"></i></a></th>
+                                    <th scope="col">Name in thai</th>
+                                    <th scope="col" class="text-nowrap" >Name in english</th>
+                                    <th scope="col" class="text-nowrap" ></th>
+                                    <th scope="col" class="text-nowrap" ></th>
+                                    <th scope="col" class="text-nowrap" ></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            <% @dataepidemics.each_with_index do |data, index| %> 
+                            <tr>
+                                <td class="text-nowrap"><%= index+1 %></td>
+                                <td class="text-nowrap"><%= data.name_th %></td>
+                                <td class="text-nowrap"><%= data.name_en %></td>
+                                <td class="text-nowrap"><%= link_to "Show", dataepidemic_path(data) %></td>
+                              <td class="text-nowrap"><%= link_to "Edit", edit_dataepidemic_path(data) %></td>
+                                <td class="text-nowrap"><%= link_to "Delete", dataepidemic_path(data), method: :delete, data: { confirm: "Are you sure?"} %></td>
+
+<% end %> 
+
+                              </tbody>
+                          </tr>
+                                </table>
+               
+                        </div>
+                    </div>
+
+  

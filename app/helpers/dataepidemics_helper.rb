@@ -1,0 +1,2 @@
+module DataepidemicsHelper
+end

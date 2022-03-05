@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get 'datapests/index'
   resources :complain_sections
   resources :complains
+  resources :dataepidemics
+  resources :datapests
   # resources :complain
   devise_for :admins, controllers: { sessions: 'admins/sessions', registrations: 'admins/registrations', passwords: 'admins/passwords', invitations: 'admins/invitations' }
   root 'admin#home'

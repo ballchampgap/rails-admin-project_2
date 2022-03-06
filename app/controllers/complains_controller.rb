@@ -4,7 +4,7 @@ class ComplainsController < ApplicationController
 
   # GET /complains or /complains.json
   def index
-    @complains = Complain.all.page(params[:page]) 
+    @complains = Complain.all
   end
 
   # GET /complains/1 or /complains/1.json

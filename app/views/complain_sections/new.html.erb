@@ -1,5 +1,40 @@
-<h1>New Complain Section</h1>
+<!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Edit Title Complain &nbsp<i class="fa fa-pencil" aria-hidden="true"></i></h1>
+                        <div class="row">
+      <%= render 'form', complain_section: @complain_section %>
 
-<%= render 'form', complain_section: @complain_section %>
+      </header>
+<div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa fa-table" aria-hidden="true"></i></i>&nbsp
+                                List Table
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                            <table class="table table-sm table-hover table-bordered text-center">
+                          <thead>
+                                <tr>
+                              <th scope="col">#</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col" class="text-nowrap" ></th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-<%= link_to 'Back', complain_sections_path %>
+                            <% @complain_sections.each_with_index do |data, index| %> 
+                            <tr>
+                                <td class="text-nowrap"><%= index+1 %></td>
+                                <td class="text-nowrap"><%= data.section %></td>
+                                <td class="text-nowrap"><%= link_to "Delete", complain_section_path(data), method: :delete, data: { confirm: "Are you sure?"} %></td>
+
+<% end %> 
+
+                              </tbody>
+                          </tr>
+                                </table>
+              <%= link_to 'Back', complains_path %>
+                        </div>
+                    </div>
+

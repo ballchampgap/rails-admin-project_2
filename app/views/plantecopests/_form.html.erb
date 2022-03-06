@@ -1,0 +1,17 @@
+<%= form_with  model: @plantecopest do |form| %>
+<div class="row g-3" >
+<div class="col-auto">
+    <%= form.label :name_th, class: "visually-hidden" %>
+    <%= form.text_field :name_th, class: "form-control", placeholder: "Name TH", :required => true  %>
+  </div>
+
+  <div class="col-auto">
+    <%= form.label :name_en, class: "visually-hidden"%>
+    <%= form.text_field :name_en, class: "form-control", placeholder: "Name EN", :required => true %>
+  </div>
+
+<div class="col-auto">
+    <%= form.submit "Add", class:"btn btn-primary mb-3" %>
+  </div>
+  </div>
+<% end %>

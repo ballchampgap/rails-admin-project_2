@@ -1,22 +1,12 @@
-<%= form_with(model: complain_section) do |form| %>
-  <% if complain_section.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(complain_section.errors.count, "error") %> prohibited this complain_section from being saved:</h2>
-
-      <ul>
-        <% complain_section.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :section %>
-    <%= form.text_field :section %>
+<%= form_with  model: @complain_section do |form| %>
+<div class="row g-3" >
+<div class="col-auto">
+    <%= form.label :section, class: "visually-hidden" %>
+    <%= form.text_field :section, class: "form-control", placeholder: "Title", :required => true  %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+<div class="col-auto">
+    <%= form.submit "Add", class:"btn btn-primary mb-3" %>
+  </div>
   </div>
 <% end %>

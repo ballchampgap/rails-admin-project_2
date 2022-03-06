@@ -1,0 +1,27 @@
+<header class="w3-container" style="padding-top:22px">
+   
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">Edit Industrial Crop &nbsp<i class="fa fa-pencil-square-o" aria-hidden="true"></i></h1></a>
+                        <div class="row">
+   
+  </header>
+  <div class="card mb-4">
+ <div class="card-body">
+<%= form_with  model: @plantecoepidemic do |form| %>
+<div class="field form-group">
+    <%= form.label :name_th, class: "col-form-label" %><br>
+    <%= form.text_field :name_th %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :name_en, class: "col-form-label"%><br>
+    <%= form.text_field :name_en %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Submit", class:"btn btn-primary text-white" %>
+  </div>
+<% end %>
+<%= link_to "Back", new_plantecoepidemic_path %>
+</div>
+</div>

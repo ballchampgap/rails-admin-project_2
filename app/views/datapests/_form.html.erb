@@ -1,21 +1,21 @@
 <%= form_with  model: @datapest, :html => { :multipart => true } do |form| %>
 <div class="field form-group">
     <%= form.label :Plant_Economic, class: "col-form-label" %><br>
-    <%= select_tag(:plantecopest_id, options_for_select(@plantecopests), :prompt => "Select add PlantEconomic")%>
+    <%= select_tag(:plantecopest_id, options_for_select(@plantecopests), :prompt => "Select add PlantEconomic", :required => true)%>
   </div>
 <div class="field form-group">
     <%= form.label :name_th, class: "col-form-label" %><br>
-    <%= form.text_field :name_th %>
+    <%= form.text_field :name_th, :required => true %>
   </div>
 
   <div class="field form-group">
     <%= form.label :name_en, class: "col-form-label"%><br>
-    <%= form.text_field :name_en %>
+    <%= form.text_field :name_en, :required => true %>
   </div>
   
   <div class="field form-group">
     <%= form.label :body, class: "col-form-label"%><br>
-    <%= form.rich_text_area :body %>
+    <%= form.rich_text_area :body, :required => true %>
   </div>
 
   <div class="actions">

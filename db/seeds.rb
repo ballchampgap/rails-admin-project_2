@@ -24,4 +24,4 @@
 # Pest.create(yname: "rewg", plant_type: "rice", data_pest: "covid", lat: "18.7887002825974", lon: "98.96780650658836", description: "rwsgtrwegergrewhgerHUET5UHJET5UHTREHJRTHTRHERT")
 # Epidemic.create(yname: "wegfew", plant_type: "cron", data_epidemic: "covid8", lat: "18.79351469159914", lon: "98.97799890080805", description: "erhgeryherjhrtujtyiyuoikuyioliuljklhjltuolyuiok")
 
-Complain.create(yname: "yo", section: "covidasf", body: "asnhgyhfgiehfihefrwegrewgrewgerwsgerdgerdgreg", user_id: "U1fa936d386fc92aa91c37aa751765d38")
+Complain.create(yname: "pppp", section: "covidasf", body: "asnhgyhfgiehfihefrwegrewgrewgerwsgerdgerdgreg", user_id: "U1fa936d386fc92aa91c37aa751765d38")

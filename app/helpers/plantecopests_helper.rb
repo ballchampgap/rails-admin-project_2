@@ -1,0 +1,2 @@
+module PlantecopestsHelper
+end

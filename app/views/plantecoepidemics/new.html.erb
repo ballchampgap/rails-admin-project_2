@@ -1,0 +1,44 @@
+<header class="w3-container" style="padding-top:22px">
+   
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">Add Industrial Crop in Epidemic &nbsp<i class="fa fa-pagelines" aria-hidden="true"></i></h1></a>
+        
+   <%= render 'form' %>
+  </header>
+<div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa fa-table" aria-hidden="true"></i></i>&nbsp
+                                List Table
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                            <table class="table table-sm table-hover table-bordered text-center">
+                          <thead>
+                                <tr>
+                              <th scope="col">#</th>
+                                    <th scope="col">Name in thai</th>
+                                    <th scope="col" class="text-nowrap" >Name in english</th>
+                                    <th scope="col" class="text-nowrap" ></th>
+                                    <th scope="col" class="text-nowrap" ></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            <% @plantecoepidemics.each_with_index do |data, index| %> 
+                            <tr>
+                                <td class="text-nowrap"><%= index+1 %></td>
+                                <td class="text-nowrap"><%= data.name_th %></td>
+                                <td class="text-nowrap"><%= data.name_en %></td>
+                              <td class="text-nowrap"><%= link_to "Edit", edit_plantecoepidemic_path(data) %></td>
+                                <td class="text-nowrap"><%= link_to "Delete", plantecoepidemic_path(data), method: :delete, data: { confirm: "Are you sure?"} %></td>
+
+<% end %> 
+
+                              </tbody>
+                          </tr>
+                                </table>
+               <%= link_to "Back", dataepidemics_path %>
+                        </div>
+                    </div>
+
+  

@@ -47,7 +47,7 @@ class ComplainsController < ApplicationController
         "type": "bubble",
         "hero": {
           "type": "image",
-          "url": image_url('lineadmin.jpg'),
+          "url": 'https://www.img.in.th/images/4cbf6a2f65c2b2f9f636a97d5999d4c9.jpg',
           "size": "full",
           "aspectRatio": "20:13",
           "aspectMode": "cover"

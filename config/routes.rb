@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'showdatas/index' 
+  get 'showdatas/index2' => 'showdatas#index2'
+  get '/pest/:id', to: 'showdatas#showpest'
+  get '/epidemic/:id', to: 'showdatas#showepidemic'
   get 'plantecopests/index'
   get 'plantecoepidemics/index'
   get 'datapests/index'

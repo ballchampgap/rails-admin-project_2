@@ -1,0 +1,44 @@
+<header class="w3-container" style="padding-top:22px">
+   
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">ข้อมูลโรคระบาด &nbsp<i class="fa fa-pagelines" aria-hidden="true"></i></h1></a>
+                        
+  </header>
+<div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa fa-bug" aria-hidden="true"></i>&nbsp
+                                <a href="/showdatas/index">ตารางข้อมูล</a> <%= params[:plantecoepidemic] %>&nbsp
+                             <% Plantecoepidemic.all.each do |plantecoepidemic| %>
+    <%= link_to plantecoepidemic.name_th, showdatas_index_path(plantecoepidemic: plantecoepidemic.name_th), class: "link" %>
+  <% end %>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                            <table class="table table-sm table-hover table-bordered text-center">
+                          <thead>
+                                <tr>
+                              <th scope="col">#</th>
+                                    <th scope="col" class="text-nowrap">ชื่อโรคภาษาไทย</th>
+                                    <th scope="col" class="text-nowrap" >ชื่อโรคภาษาอังกฤษ</th>
+                                    <th scope="col" class="text-nowrap" ></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            <% @dataepidemics.each_with_index do |datap, index| %> 
+                            <tr>
+                                <td class="text-nowrap"><%= index+1 %></td>
+                                <td class="text-nowrap"><%= datap.name_th %></td>
+                                <td class="text-nowrap"><%= datap.name_en %></td>
+                                <td class="text-nowrap"><a href="/epidemic/<%= datap.id %>" class="btn btn-prinary">Details</a></td>
+
+<% end %> 
+
+                              </tbody>
+                          </tr>
+                                </table>
+               
+                        </div>
+                    </div>
+
+  

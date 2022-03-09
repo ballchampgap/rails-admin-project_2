@@ -47,7 +47,7 @@ class ComplainsController < ApplicationController
         "type": "bubble",
         "hero": {
           "type": "image",
-          "url": "https://media.discordapp.net/attachments/900355262584610826/949607708498223154/MES-01.jpg",
+          "url": image_url('lineadmin.jpg'),
           "size": "full",
           "aspectRatio": "20:13",
           "aspectMode": "cover"

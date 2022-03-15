@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_05_173356) do
+ActiveRecord::Schema.define(version: 2022_03_15_214750) do
 
   create_table "action_text_rich_texts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -124,8 +124,8 @@ ActiveRecord::Schema.define(version: 2022_03_05_173356) do
     t.float "lon"
     t.float "lat"
     t.string "address"
-    t.integer "idplant"
-    t.integer "idepidemic"
+    t.string "plant_en"
+    t.string "epidemic_en"
   end
 
   create_table "pests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -138,8 +138,8 @@ ActiveRecord::Schema.define(version: 2022_03_05_173356) do
     t.float "lat"
     t.float "lon"
     t.string "address"
-    t.integer "idplant"
-    t.integer "idpest"
+    t.string "plant_en"
+    t.string "pest_en"
   end
 
   create_table "plantecoepidemics", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

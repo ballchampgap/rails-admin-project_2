@@ -29,8 +29,8 @@
                                 <td class="text-nowrap"><%= index+1 %></td>
                                 <td class="text-nowrap"><%= data.name_th %></td>
                                 <td class="text-nowrap"><%= data.name_en %></td>
-                              <td class="text-nowrap"><%= link_to "Edit", edit_plantecopest_path(data) %></td>
-                                <td class="text-nowrap"><%= link_to "Delete", plantecopest_path(data), method: :delete, data: { confirm: "Are you sure?"} %></td>
+                              <td class="text-nowrap"><%= link_to "Edit", edit_plantecopest_path(data), :class => "btn btn-warning" %></td>
+                                <td class="text-nowrap"><%= link_to "Delete", plantecopest_path(data), method: :delete, data: { confirm: "Are you sure?"}, :class => "btn btn-danger" %></td>
 
 <% end %> 
 

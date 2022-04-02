@@ -2,8 +2,8 @@
    
  <div class="container-fluid px-4">
                         <h1 class="mt-4">Epidemic Data &nbsp<i class="fa fa-pagelines" aria-hidden="true"></i></h1></a>
-                        <div class="row">
-   <a href="/plantecoepidemics/new"><i class="fa fa-file" aria-hidden="true"></i>&nbsp Add Industrial Crop </a>
+                        <div class="row btn btn-warning">
+   <a href="/plantecoepidemics/new" style="text-decoration: none;"><i class="fa fa-file " aria-hidden="true" ></i>&nbsp Add Industrial Crop </a>
   </header><br>
 <div class="card mb-4">
                             <div class="card-header">
@@ -18,7 +18,7 @@
                             <table class="table table-sm table-hover table-bordered text-center">
                           <thead>
                                 <tr>
-                              <th scope="col"> <a href="/dataepidemics/new"><i class="fa fa-plus" aria-hidden="true"></i></a></th>
+                              <th scope="col"> <a href="/dataepidemics/new" title="Add" ><i class="fa fa-plus" aria-hidden="true"></i></a></th>
                                     <th scope="col" class="text-nowrap">Name in thai</th>
                                     <th scope="col" class="text-nowrap" >Name in english</th>
                                     <th scope="col" class="text-nowrap" ></th>
@@ -33,9 +33,9 @@
                                 <td class="text-nowrap"><%= index+1 %></td>
                                 <td class="text-nowrap"><%= data.name_th %></td>
                                 <td class="text-nowrap"><%= data.name_en %></td>
-                                <td class="text-nowrap"><%= link_to "Show", dataepidemic_path(data) %></td>
-                              <td class="text-nowrap"><%= link_to "Edit", edit_dataepidemic_path(data) %></td>
-                                <td class="text-nowrap"><%= link_to "Delete", dataepidemic_path(data), method: :delete, data: { confirm: "Are you sure?"} %></td>
+                                <td class="text-nowrap"><%= link_to "Show", dataepidemic_path(data), :class => "btn btn-info" %></td>
+                              <td class="text-nowrap"><%= link_to "Edit", edit_dataepidemic_path(data), :class => "btn btn-warning" %></td>
+                                <td class="text-nowrap"><%= link_to "Delete", dataepidemic_path(data), method: :delete, data: { confirm: "Are you sure?"}, :class => "btn btn-danger" %></td>
 
 <% end %> 
 

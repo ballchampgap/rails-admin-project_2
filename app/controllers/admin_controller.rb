@@ -1,7 +1,12 @@
 class AdminController < ApplicationController
   before_action :authenticate_admin!
   def home
-    
+    @complains = Complain.all
+    @admins = Admin.all
+    @pests = Pest.all
+    @datapest = Pest.group(:plant_type).count
+    @epidemics = Epidemic.all
+    @dataepic = Epidemic.group(:plant_type).count
   end
   
   def read

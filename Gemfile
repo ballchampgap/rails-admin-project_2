@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'strftime'
+gem "chartkick"
+gem "groupdate"
 gem 'devise_invitable', '~> 2.0.0'
 gem 'kaminari'
 gem 'will_paginate-bootstrap4'

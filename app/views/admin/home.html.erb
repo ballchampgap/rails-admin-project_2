@@ -6,9 +6,57 @@
                         </div>
    
   </header>
-  <div class="card-body">
-  <div class="center">
- 
-
-</div>
- </div>
+ <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container  w3-padding-16">
+        <div class="w3-left"><h4>Epidemic</h4></div>
+        <div class="w3-right">
+          <h3><%= @epidemics.count %></h3>
+        </div>
+        <div class="w3-clear"></div>
+         <%= pie_chart (@dataepic) %>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-padding-16">
+        <div class="w3-left"><h4>Pest</h4></div>
+        <div class="w3-right">
+          <h3><%= @pests.count %></h3>
+        </div>
+        <div class="w3-clear"></div>
+         <%= pie_chart (@datapest) %>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-comments-o w3-xxxlarge" aria-hidden="true"></i></div>
+        
+        <div class="w3-right">
+          <h3>23</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Complain</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3><%= @admins.count %></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Admin</h4>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Epidemic</h5>
+    <%= bar_chart Epidemic.group(:data_epidemic).count %>
+  </div>
+  <hr>
+<div class="w3-container">
+    <h5>Pest</h5>
+    <%= bar_chart Pest.group(:data_pest).count %>
+  </div>
+ <hr>

@@ -140,5 +140,4 @@ config.action_mailer.smtp_settings = {
    :user_name => 'projectcsmju24@gmail.com',
    :password => 'pufcyqysfvtnebze'
  } 
-    
 end

@@ -138,7 +138,7 @@ config.action_mailer.smtp_settings = {
    :authentication => :plain, # I've also tried changing this to :login
    :enable_starttls_auto => true,
    :user_name => 'projectcsmju24@gmail.com',
-   :password => 'project123456789'
+   :password => 'pufcyqysfvtnebze'
  } 
     
 end
